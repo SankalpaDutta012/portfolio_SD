@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Code, Database, Cloud, Cog, Palette, Cpu } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, animate } from "framer-motion"; // Updated import
 
 interface Skill {
   name: string;
@@ -53,7 +53,7 @@ const AnimatedProgress: React.FC<AnimatedProgressProps> = ({ value, className, '
       viewport={{ once: true, amount: 0.8 }}
       onViewportEnter={() => {
         // Animate the progress bar fill
-        const controls = motion.animate(0, value, {
+        const controls = animate(0, value, { // Changed motion.animate to animate
           duration: 1,
           delay: 0.2,
           ease: "easeOut",

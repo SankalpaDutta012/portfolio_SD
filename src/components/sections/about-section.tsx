@@ -1,4 +1,5 @@
 
+"use client"; // Added this because framer-motion components are client components
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";

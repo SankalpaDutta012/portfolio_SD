@@ -1,6 +1,9 @@
 
-import { ProjectCard, type Project } from "@/components/ui/project-card";
-import { motion } from "framer-motion";
+"use client"; // Add this directive
+
+import type { Project } from "@/components/ui/project-card"; // Keep existing type import
+import { ProjectCard } from "@/components/ui/project-card";
+import { motion } from "framer-motion"; // Add this import
 
 const projects: Project[] = [
   {
