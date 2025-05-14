@@ -1,3 +1,4 @@
+import * as React from "react";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Code, Database, Cloud, Cog, BarChartBig, Cpu, Palette } from "lucide-react";

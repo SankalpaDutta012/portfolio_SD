@@ -1,3 +1,4 @@
+
 "use client"
 
 import type { Dispatch, SetStateAction } from "react";
@@ -29,31 +30,40 @@ export function ThemeProvider({
   storageKey = "vite-ui-theme",
   ...props
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
-  )
+  const [theme, setTheme] = useState<Theme>(defaultTheme); // Initialize with default theme
 
   useEffect(() => {
+    // This effect runs only on the client, after initial hydration
+    const storedTheme = localStorage.getItem(storageKey) as Theme | null;
+    if (storedTheme) {
+      setTheme(storedTheme);
+    }
+  }, [storageKey]); // Run once on mount, and if storageKey changes (unlikely for this prop)
+
+  useEffect(() => {
+    // This effect applies the theme to the document and saves it to localStorage
+    // It runs on the client side
     const root = window.document.documentElement
 
     root.classList.remove("light", "dark")
 
+    let currentTheme = theme;
     if (theme === "system") {
       const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
         .matches
         ? "dark"
         : "light"
-
       root.classList.add(systemTheme)
-      return
+      currentTheme = systemTheme; // For localStorage, store the resolved system theme
+    } else {
+      root.classList.add(theme)
     }
+    
+    // Only save to localStorage if the theme is not 'system' or if it's the resolved system theme
+    // Or, always save the user's preference (light, dark, or system itself)
+    localStorage.setItem(storageKey, theme); // Save the user's selected preference (light, dark, or system)
 
-    root.classList.add(theme)
-  }, [theme])
-
-  useEffect(() => {
-    localStorage.setItem(storageKey, theme)
-  }, [theme, storageKey])
+  }, [theme, storageKey]);
 
 
   const value = {
