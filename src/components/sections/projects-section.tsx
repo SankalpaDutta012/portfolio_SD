@@ -9,11 +9,11 @@ const projects: Project[] = [
   {
     title: "RoamFree Travel App",
     description: "A comprehensive travel application to plan and book your adventures. Discover destinations, find accommodations, and manage your itineraries.",
-    imageUrl: "https://placehold.co/600x400.png",
-    imageHint: "travel app",
+    imageUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=", // Placeholder data URI
+    imageHint: "travel collage", // Updated hint
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB"],
     liveDemoUrl: "https://roamfree-travel-app.onrender.com/",
-    githubUrl: "#", // You can update this later
+    githubUrl: "#",
   },
   {
     title: "Task Management App",
