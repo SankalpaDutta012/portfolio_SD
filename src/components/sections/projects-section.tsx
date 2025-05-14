@@ -7,13 +7,13 @@ import { motion } from "framer-motion"; // Add this import
 
 const projects: Project[] = [
   {
-    title: "E-commerce Platform",
-    description: "A full-featured e-commerce platform with product listings, cart functionality, and user accounts. Built with Next.js and Stripe integration.",
-    imageUrl: "https://placehold.co/600x400.png?bg=20c997&fc=ffffff",
-    imageHint: "e-commerce website",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Firebase"],
-    liveDemoUrl: "#",
-    githubUrl: "#",
+    title: "RoamFree Travel App",
+    description: "A comprehensive travel application to plan and book your adventures. Discover destinations, find accommodations, and manage your itineraries.",
+    imageUrl: "https://placehold.co/600x400.png",
+    imageHint: "travel app",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB"],
+    liveDemoUrl: "https://roamfree-travel-app.onrender.com/",
+    githubUrl: "#", // You can update this later
   },
   {
     title: "Task Management App",
@@ -58,7 +58,7 @@ export function ProjectsSection() {
   return (
     <section id="projects" className="section-padding">
       <div className="container">
-        <motion.h2 
+        <motion.h2
           className="section-title"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}

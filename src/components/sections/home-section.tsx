@@ -31,7 +31,7 @@ export function HomeSection() {
           className="mb-8"
         >
           <Image
-            src="https://placehold.co/200x200.png"
+            src="/SD11.jpg"
             alt="Sankalpa Dutta"
             width={200}
             height={200}
@@ -54,7 +54,7 @@ export function HomeSection() {
           transition={{ delay: 0.6, duration: 0.5 }}
           className="mt-6 max-w-2xl text-lg text-foreground/80 sm:text-xl"
         >
-          Full-Stack Developer & Tech Enthusiast. Crafting digital experiences with code and creativity.
+          Full-Stack Developer, IoT Innovator & Tech Enthusiast – Crafting intelligent, real-time solutions that merge AI, sensors, and code into smart systems for a connected future. Passionate about research, traffic optimization, and building digital experiences that simplify life.
         </motion.p>
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
