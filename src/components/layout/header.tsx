@@ -13,10 +13,11 @@ export function Header() {
           </svg>
           <span className="font-bold">Sankalpa's Space</span>
         </Link>
-        <nav className="flex flex-1 items-center space-x-4">
+        <nav className="flex flex-1 items-center space-x-2 md:space-x-4 text-sm md:text-base">
           <Button variant="link" asChild><Link href="#about">About</Link></Button>
           <Button variant="link" asChild><Link href="#projects">Projects</Link></Button>
           <Button variant="link" asChild><Link href="#skills">Skills</Link></Button>
+          <Button variant="link" asChild><Link href="#experience-interests">Experience</Link></Button>
           <Button variant="link" asChild><Link href="#contact">Contact</Link></Button>
         </nav>
         <div className="flex flex-1 items-center justify-end space-x-2">

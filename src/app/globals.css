@@ -114,3 +114,17 @@ body {
 .section-title {
   @apply text-3xl md:text-4xl font-bold text-center mb-12;
 }
+
+.perspective {
+  perspective: 1000px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}

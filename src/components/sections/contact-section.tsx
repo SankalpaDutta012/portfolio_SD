@@ -163,12 +163,12 @@ export function ContactSection() {
                 <div className="flex items-center">
                   <Mail className="mr-3 h-5 w-5 text-primary" />
                   <a href="mailto:your.email@example.com" className="text-muted-foreground hover:text-foreground transition-colors">
-                    your.email@example.com
+                    sankalpadutta04@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center">
                   <Home className="mr-3 h-5 w-5 text-primary" />
-                  <p className="text-muted-foreground">Placeholder City, Country</p>
+                  <p className="text-muted-foreground">Kolkata, India</p>
                 </div>
               </CardContent>
             </Card>
