@@ -31,12 +31,12 @@ export function HomeSection() {
           className="mb-8"
         >
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/firebase-studio-users.appspot.com/o/imagereplacements%2Fclwdb0q610008m3wk6z99m3m0%2Foriginal?alt=media&token=3c6c39ff-f01a-4db6-b234-dfbb196d8295"
+            src="https://placehold.co/200x200.png"
             alt="Sankalpa Dutta"
             width={200}
             height={200}
             className="rounded-full border-4 border-background shadow-lg object-cover"
-            data-ai-hint="profile man"
+            data-ai-hint="Sankalpa profile"
             priority
           />
         </motion.div>
