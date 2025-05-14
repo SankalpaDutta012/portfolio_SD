@@ -7,16 +7,16 @@ import { Brain, Code, Cpu, ShieldCheck, Cloud, Briefcase, Lightbulb } from 'luci
 
 // Data
 const experiences = [
-  { title: "IoT", description: "Building connected devices and intelligent systems.", icon: <Cpu className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
-  { title: "Cyber Security", description: "Protecting systems and data from digital threats.", icon: <ShieldCheck className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
-  { title: "Cloud Computing", description: "Leveraging cloud platforms for scalable solutions.", icon: <Cloud className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
-  { title: "Full Stack Development", description: "End-to-end web application development.", icon: <Briefcase className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
+  { title: "IoT", description: "Building connected devices and intelligent systems for the future.", icon: <Cpu className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
+  { title: "Cyber Security", description: "Protecting digital assets and ensuring data integrity against threats.", icon: <ShieldCheck className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
+  { title: "Cloud Computing", description: "Leveraging cloud platforms for scalable, resilient, and efficient solutions.", icon: <Cloud className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
+  { title: "Full Stack Development", description: "Crafting end-to-end web applications with a focus on user experience.", icon: <Briefcase className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
 ];
 
 const interests = [
-  { title: "Prompt Engineering", description: "Crafting effective prompts for AI models.", icon: <Brain className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
-  { title: "Object Oriented Programming", description: "Designing software with OOP principles.", icon: <Code className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
-  { title: "Problem Solving", description: "Finding creative solutions to complex challenges.", icon: <Lightbulb className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
+  { title: "Prompt Engineering", description: "Designing effective prompts to harness the power of AI models.", icon: <Brain className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
+  { title: "Object Oriented Programming", description: "Applying OOP principles for robust and maintainable software design.", icon: <Code className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
+  { title: "Problem Solving", description: "Tackling complex challenges with creative and analytical approaches.", icon: <Lightbulb className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
 ];
 
 interface FlippableCardProps {
@@ -70,7 +70,7 @@ export function ExperienceInterestsSection() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, staggerChildren: 0.1 } },
   };
 
-  const cardMotionVariants = { // Renamed to avoid conflict if cardVariants is used elsewhere
+  const cardMotionVariants = { 
     hidden: { opacity: 0, scale: 0.8, y: 20 },
     visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
   };
