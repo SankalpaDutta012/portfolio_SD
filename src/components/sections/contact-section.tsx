@@ -2,7 +2,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import { useActionState } from "react"; // Updated import
+import { useActionState } from "react"; 
 import { useFormStatus } from "react-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -17,7 +17,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
 import { submitContactForm, type ContactFormState } from "@/app/actions";
-import { Loader2, MapPin } from "lucide-react";
+import { Loader2, MapPin, Mail, Home } from "lucide-react";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -152,6 +152,23 @@ export function ContactSection() {
                     className="object-cover w-full h-full"
                     data-ai-hint="map India"
                   />
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="shadow-lg">
+              <CardHeader>
+                <CardTitle>Contact Information</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-center">
+                  <Mail className="mr-3 h-5 w-5 text-primary" />
+                  <a href="mailto:your.email@example.com" className="text-muted-foreground hover:text-foreground transition-colors">
+                    your.email@example.com
+                  </a>
+                </div>
+                <div className="flex items-center">
+                  <Home className="mr-3 h-5 w-5 text-primary" />
+                  <p className="text-muted-foreground">Placeholder City, Country</p>
                 </div>
               </CardContent>
             </Card>

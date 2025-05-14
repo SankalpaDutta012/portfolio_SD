@@ -9,20 +9,20 @@ const projects: Project[] = [
   {
     title: "RoamFree Travel App",
     description: "A comprehensive travel application to plan and book your adventures. Discover destinations, find accommodations, and manage your itineraries.",
-    imageUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=", // Placeholder data URI
+    imageUrl: "/r1.jpg", // Placeholder data URI
     imageHint: "travel collage", // Updated hint
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB"],
     liveDemoUrl: "https://roamfree-travel-app.onrender.com/",
-    githubUrl: "#",
+    githubUrl: "https://github.com/SankalpaDutta012/RoamFree-Travel-App.git",
   },
   {
-    title: "Task Management App",
-    description: "A collaborative task management application allowing users to create, assign, and track tasks within teams.",
-    imageUrl: "https://placehold.co/600x400.png?bg=007bff&fc=ffffff",
+    title: "Algo_tracker",
+    description: "Algo Tracker is your personal companion for tracking algorithm practice, helping you monitor progress, stay consistent, and reach your coding goals with ease.",
+    imageUrl: "/bestAlgo.jpg",
     imageHint: "task app interface",
-    techStack: ["React", "Redux", "Node.js", "Express", "MongoDB"],
-    liveDemoUrl: "#",
-    githubUrl: "#",
+    techStack: ["React", "Node.js","TypeScript", "Next.js", "Tailwind CSS", "MongoDB"],
+    liveDemoUrl: "https://algo-tracker-website.onrender.com/",
+    githubUrl: "https://github.com/SankalpaDutta012/Algo-Tracker-Website.git",
   },
   {
     title: "Portfolio Website V1",
