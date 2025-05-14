@@ -26,19 +26,12 @@ interface FlippableCardProps {
 const FlippableCard: React.FC<FlippableCardProps> = ({ item }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const handleFlip = () => {
-    setIsFlipped(!isFlipped);
-  };
-
   return (
     <div
-      className="perspective w-full h-48 sm:h-56 cursor-pointer group"
-      onClick={handleFlip}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && handleFlip()}
-      aria-pressed={isFlipped}
-      aria-label={`Flip card for ${item.title}`}
+      className="perspective w-full h-48 sm:h-56 group"
+      onMouseEnter={() => setIsFlipped(true)}
+      onMouseLeave={() => setIsFlipped(false)}
+      aria-label={`Card for ${item.title}, hover to see details`}
     >
       <motion.div
         className="relative w-full h-full preserve-3d"
@@ -85,7 +78,7 @@ export function ExperienceInterestsSection() {
       viewport={{ once: true, amount: 0.1 }}
     >
       <div className="container">
-        <h2 className="section-title">Experience & Interests</h2>
+        <h2 className="section-title">Experience &amp; Interests</h2>
 
         <motion.div className="mb-12 md:mb-16" variants={sectionVariants}>
           <h3 className="text-2xl md:text-3xl font-semibold text-center mb-8 text-primary">My Experience</h3>
