@@ -1,11 +1,9 @@
-
 "use client";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 
 export function HomeSection() {
   const [mounted, setMounted] = useState(false);
@@ -13,29 +11,22 @@ export function HomeSection() {
 
   if (!mounted) {
     // Prevent FOUC or layout shift by rendering nothing or a placeholder on the server
-    return null; 
+    return null;
   }
 
   return (
     <section id="home" className="relative flex h-[calc(100vh-3.5rem)] min-h-[600px] w-full items-center justify-center overflow-hidden animated-gradient-background">
       <div className="container z-10 flex flex-col items-center text-center">
-        <div className="mb-8"> {/* Removed Tailwind animation classes */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-            whileHover={{ scale: 1.05 }}
-          >
-            <Image
-              src="https://firebasestorage.googleapis.com/v0/b/firebase-studio-users.appspot.com/o/imagereplacements%2Fclwdb0q610008m3wk6z99m3m0%2Foriginal?alt=media&token=3c6c39ff-f01a-4db6-b234-dfbb196d8295"
-              alt="Sankalpa Dutta"
-              width={200}
-              height={200}
-              className="rounded-full border-4 border-background shadow-lg object-cover"
-              data-ai-hint="profile man"
-              priority
-            />
-          </motion.div>
+        <div className="mb-8 transition-transform duration-500 ease-out hover:scale-105">
+          <Image
+            src="https://firebasestorage.googleapis.com/v0/b/firebase-studio-users.appspot.com/o/imagereplacements%2Fclwdb0q610008m3wk6z99m3m0%2Foriginal?alt=media&token=3c6c39ff-f01a-4db6-b234-dfbb196d8295"
+            alt="Sankalpa Dutta"
+            width={200}
+            height={200}
+            className="rounded-full border-4 border-background shadow-lg object-cover"
+            data-ai-hint="profile man"
+            priority
+          />
         </div>
         <h1 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
           Sankalpa Dutta
