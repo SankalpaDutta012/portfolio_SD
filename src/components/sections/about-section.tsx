@@ -1,5 +1,7 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
+import { motion } from "framer-motion";
 
 const skillsAndInterests = [
   "Developing scalable web applications with modern frameworks.",
@@ -11,7 +13,14 @@ const skillsAndInterests = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="section-padding bg-secondary">
+    <motion.section 
+      id="about" 
+      className="section-padding bg-secondary"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="container">
         <h2 className="section-title">About Me</h2>
         <div className="max-w-4xl mx-auto">
@@ -41,6 +50,6 @@ export function AboutSection() {
           </Card>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

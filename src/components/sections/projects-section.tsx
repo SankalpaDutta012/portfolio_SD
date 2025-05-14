@@ -1,4 +1,6 @@
+
 import { ProjectCard, type Project } from "@/components/ui/project-card";
+import { motion } from "framer-motion";
 
 const projects: Project[] = [
   {
@@ -37,14 +39,43 @@ const projects: Project[] = [
   },
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.15,
+      duration: 0.5,
+    },
+  }),
+};
+
 export function ProjectsSection() {
   return (
     <section id="projects" className="section-padding">
       <div className="container">
-        <h2 className="section-title">My Projects</h2>
+        <motion.h2 
+          className="section-title"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          My Projects
+        </motion.h2>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.title}
+              custom={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={cardVariants}
+            >
+              <ProjectCard project={project} />
+            </motion.div>
           ))}
         </div>
       </div>

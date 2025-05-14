@@ -1,9 +1,11 @@
+
 "use client";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export function HomeSection() {
   const [mounted, setMounted] = useState(false);
@@ -17,7 +19,17 @@ export function HomeSection() {
   return (
     <section id="home" className="relative flex h-[calc(100vh-3.5rem)] min-h-[600px] w-full items-center justify-center overflow-hidden animated-gradient-background">
       <div className="container z-10 flex flex-col items-center text-center">
-        <div className="mb-8 transition-transform duration-500 ease-out hover:scale-105">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.2,
+            ease: [0, 0.71, 0.2, 1.01]
+          }}
+          whileHover={{ scale: 1.05 }}
+          className="mb-8"
+        >
           <Image
             src="https://firebasestorage.googleapis.com/v0/b/firebase-studio-users.appspot.com/o/imagereplacements%2Fclwdb0q610008m3wk6z99m3m0%2Foriginal?alt=media&token=3c6c39ff-f01a-4db6-b234-dfbb196d8295"
             alt="Sankalpa Dutta"
@@ -27,14 +39,29 @@ export function HomeSection() {
             data-ai-hint="profile man"
             priority
           />
-        </div>
-        <h1 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
+        </motion.div>
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+          className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl"
+        >
           Sankalpa Dutta
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg text-foreground/80 sm:text-xl">
+        </motion.h1>
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+          className="mt-6 max-w-2xl text-lg text-foreground/80 sm:text-xl"
+        >
           Full-Stack Developer & Tech Enthusiast. Crafting digital experiences with code and creativity.
-        </p>
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-6">
+        </motion.p>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.5 }}
+          className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-6"
+        >
           <Button size="lg" asChild>
             <Link href="#projects">
               View Projects <ArrowRight className="ml-2 h-5 w-5" />
@@ -45,7 +72,7 @@ export function HomeSection() {
               Contact Me
             </Link>
           </Button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
