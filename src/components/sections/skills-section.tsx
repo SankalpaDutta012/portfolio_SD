@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Code, Database, Cloud, Cog, Palette, Cpu } from "lucide-react";
-import { motion, animate } from "framer-motion"; // Updated import
+import { motion, animate } from "framer-motion"; 
 
 interface Skill {
   name: string;
@@ -19,8 +19,9 @@ const skillsData: Skill[] = [
   { name: "TypeScript", proficiency: 88, icon: <Code /> },
   { name: "React & Next.js", proficiency: 90, icon: <Code /> },
   { name: "Node.js & Express", proficiency: 85, icon: <Cog /> },
-  { name: "MongoDB & SQL Databases", proficiency: 80, icon: <Database /> },
   { name: "Python (Flask/Django)", proficiency: 75, icon: <Code /> },
+  { name: "C++", proficiency: 80, icon: <Code /> },
+  { name: "MongoDB & SQL Databases", proficiency: 80, icon: <Database /> },
   { name: "IoT & Embedded Systems", proficiency: 70, icon: <Cpu /> },
   { name: "Cloud Platforms (Firebase/AWS)", proficiency: 78, icon: <Cloud /> },
 ];
@@ -53,7 +54,7 @@ const AnimatedProgress: React.FC<AnimatedProgressProps> = ({ value, className, '
       viewport={{ once: true, amount: 0.8 }}
       onViewportEnter={() => {
         // Animate the progress bar fill
-        const controls = animate(0, value, { // Changed motion.animate to animate
+        const controls = animate(0, value, { 
           duration: 1,
           delay: 0.2,
           ease: "easeOut",
