@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
-import { Brain, Code, Cpu, ShieldCheck, Cloud, Briefcase, Lightbulb } from 'lucide-react';
+import { Brain, Code, Cpu, ShieldCheck, Cloud, Briefcase, Lightbulb, Layers, BrainCircuit, Network, Users } from 'lucide-react';
 
 // Data
 const allItemsData = [
@@ -14,6 +14,10 @@ const allItemsData = [
   { title: "Prompt Engineering", description: "Designing effective prompts to harness the power of AI models.", icon: <Brain className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
   { title: "Object Oriented Programming", description: "Applying OOP principles for robust and maintainable software design.", icon: <Code className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
   { title: "Problem Solving", description: "Tackling complex challenges with creative and analytical approaches.", icon: <Lightbulb className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
+  { title: "Web Development", description: "Building modern, responsive, and performant websites and web applications.", icon: <Layers className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
+  { title: "Machine Learning", description: "Developing algorithms that allow systems to learn from and make decisions based on data.", icon: <BrainCircuit className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
+  { title: "Deep Learning", description: "Utilizing neural networks with many layers to model complex patterns in large datasets.", icon: <Network className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
+  { title: "User-Focused Development", description: "Prioritizing user needs and feedback to create intuitive and effective applications.", icon: <Users className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
 ];
 
 interface FlippableCardProps {
@@ -78,7 +82,7 @@ export function ExperienceInterestsSection() {
         <h2 className="section-title">Field of Interest</h2> {/* Updated Title */}
 
         <motion.div variants={sectionVariants}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {allItemsData.map((item, index) => (
               <motion.div key={item.title + index} variants={cardMotionVariants}>
                 <FlippableCard item={item} />
@@ -90,3 +94,4 @@ export function ExperienceInterestsSection() {
     </motion.section>
   );
 }
+
