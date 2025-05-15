@@ -1,9 +1,10 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Linkedin } from "lucide-react"; // Added Linkedin
 
 export type Project = {
   title: string;
@@ -20,6 +21,8 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const isLinkedInLink = project.liveDemoUrl && project.liveDemoUrl.includes("linkedin.com");
+
   return (
     <Card className="flex flex-col overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
       <div className="relative h-48 w-full">
@@ -58,7 +61,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
         {project.liveDemoUrl && (
           <Button variant="default" size="sm" asChild>
             <Link href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
+              {isLinkedInLink ? (
+                <Linkedin className="mr-2 h-4 w-4" />
+              ) : (
+                <ExternalLink className="mr-2 h-4 w-4" />
+              )}
+              {isLinkedInLink ? "View on LinkedIn" : "Live Demo"}
             </Link>
           </Button>
         )}

@@ -9,8 +9,8 @@ const projects: Project[] = [
   {
     title: "RoamFree Travel App",
     description: "A comprehensive travel application to plan and book your adventures. Discover destinations, find accommodations, and manage your itineraries.",
-    imageUrl: "/r1.jpg", // Placeholder data URI
-    imageHint: "travel collage", // Updated hint
+    imageUrl: "/r1.jpg", 
+    imageHint: "travel collage", 
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB"],
     liveDemoUrl: "https://roamfree-travel-app.onrender.com/",
     githubUrl: "https://github.com/SankalpaDutta012/RoamFree-Travel-App.git",
@@ -27,10 +27,10 @@ const projects: Project[] = [
   {
     title: "Skill_Up",
     description: "Skill UP is a web application designed to provide personalized recommendations for courses, videos, and job openings based on user inputs. This repository contains the backend code for the application, built using Flask and MongoDB.",
-    imageUrl: "https://placehold.co/600x400.png?bg=6f42c1&fc=ffffff",
+    imageUrl: "/Skill_up.jpg",
     imageHint: "portfolio design",
     techStack: ["HTML", "CSS", "JavaScript", "GSAP"],
-    liveDemoUrl: "#",
+    liveDemoUrl: "https://www.linkedin.com/in/sankalpa-dutta-09187525b/", // Updated Link
     githubUrl: "https://github.com/SankalpaDutta012/Skill-Up-Website.git",
   },
    {
