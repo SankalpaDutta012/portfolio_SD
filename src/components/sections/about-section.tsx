@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const skillsAndInterests = [
   "Developing scalable web applications with modern frameworks.",
-  "Expertise in JavaScript, TypeScript, React, and Node.js ecosystems.",
+  "Expertise in JavaScript, TypeScript, React, Node.js, Python, and C++ ecosystems.",
   "Passionate about exploring IoT, smart technologies, and AI.",
   "Enjoys diving into Bengali literature and watching anime.",
   "Continuously learning and adapting to new technologies.",

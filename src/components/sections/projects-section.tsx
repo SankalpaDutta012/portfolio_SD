@@ -30,7 +30,7 @@ const projects: Project[] = [
     imageUrl: "/Skill_up.jpg",
     imageHint: "portfolio design",
     techStack: ["HTML", "CSS", "JavaScript", "GSAP"],
-    liveDemoUrl: "https://www.linkedin.com/in/sankalpa-dutta-09187525b/", // Updated Link
+    liveDemoUrl: "https://www.linkedin.com/posts/sankalpa-dutta-09187525b_webdevelopment-flask-mongodb-activity-7298303624714100737-afBu?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEAFqS0Bb64Jf5qZ92H53O0m4K7OdaLkdZs", // Updated Link
     githubUrl: "https://github.com/SankalpaDutta012/Skill-Up-Website.git",
   },
    {
