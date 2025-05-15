@@ -27,30 +27,34 @@ export default function RootLayout({
     // Initialize audio only on the client side
     if (typeof window !== "undefined") {
       try {
-        audio = new Audio('/sound.wav'); // Updated sound file path
-        // Optional: Preload the audio for faster playback on first click
-        // audio.preload = "auto"; 
+        audio = new Audio('/sound.wav'); // Path to your sound file in the public directory
+        audio.preload = "auto"; // Suggest to the browser to preload the audio
       } catch (error) {
         console.error("Failed to initialize click sound:", error);
       }
     }
 
     const handleClick = (event: MouseEvent) => {
-      if (!audio) return;
+      if (!audio) {
+        console.log('Audio object is null. Sound cannot be played.');
+        return;
+      }
 
       const target = event.target as HTMLElement;
+      // console.log('Clicked target:', target); // For debugging: logs the clicked element
       
-      // Define interactive elements. This covers standard HTML elements and common accessibility patterns.
       const isInteractive = target.closest(
         'a, button, [role="button"], input[type="submit"], input[type="button"], input[type="checkbox"], input[type="radio"], select, summary, details, [tabindex]:not([tabindex="-1"])'
       );
+      // console.log('Is interactive:', isInteractive ? 'Yes' : 'No'); // For debugging: logs if the element is considered interactive
 
       if (isInteractive) {
+        // console.log('Attempting to play click sound for:', target); // For debugging
         audio.currentTime = 0; // Rewind to start if already playing or played
         audio.play().catch(error => {
           // Browsers might block audio play if there wasn't prior user interaction on the page,
           // or if the play() call isn't directly triggered by a user event.
-          console.warn("Could not play click sound:", error.message);
+          console.warn("Could not play click sound:", error.message, error);
         });
       }
     };
