@@ -1,8 +1,10 @@
 
 "use client"; // Added this because framer-motion components are client components
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { CheckCircle, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const skillsAndInterests = [
   "Developing scalable web applications with modern frameworks.",
@@ -48,6 +50,13 @@ export function AboutSection() {
                 I believe in the power of collaboration and continuous improvement, always eager to take on new challenges and expand my skillset.
               </p>
             </CardContent>
+            <CardFooter className="flex justify-center md:justify-start pt-4">
+              <Button asChild size="lg">
+                <Link href="https://drive.google.com/file/d/1WBMGNiKuOhofJQsTQTLRseM1tixCBR4m/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                  View My CV <ExternalLink className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </CardFooter>
           </Card>
         </div>
       </div>
