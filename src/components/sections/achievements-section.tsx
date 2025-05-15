@@ -23,7 +23,7 @@ const achievementsData: AchievementItem[] = [
     id: "hackathon-5th",
     text: "Achieved 5th place in the ICDMAI National Hackathon",
     icon: <Trophy className="mr-3 h-6 w-6 flex-shrink-0 text-primary" />,
-    link: "#", // Placeholder link
+    link: "https://www.linkedin.com/posts/sankalpa-dutta-09187525b_icdmai-hackathon-machinelearning-activity-7301613554346995712-2bMS?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEAFqS0Bb64Jf5qZ92H53O0m4K7OdaLkdZs", // Placeholder link
     linkLabel: "View Details",
   },
   {
@@ -35,7 +35,7 @@ const achievementsData: AchievementItem[] = [
     id: "hackerrank-5star",
     text: "Earned a 5-star rating on HackerRank",
     icon: <Award className="mr-3 h-6 w-6 flex-shrink-0 text-primary" />,
-    link: "#", // Placeholder link
+    link: "https://www.hackerrank.com/profile/sankyyy0128", // Placeholder link
     linkLabel: "View Profile",
   },
 ];

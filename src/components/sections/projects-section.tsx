@@ -25,12 +25,13 @@ const projects: Project[] = [
     githubUrl: "https://github.com/SankalpaDutta012/Algo-Tracker-Website.git",
   },
   {
-    title: "Portfolio Website V1",
-    description: "My previous personal portfolio website, showcasing earlier projects and skills. Designed with a focus on simplicity and performance.",
+    title: "Skill_Up",
+    description: "Skill UP is a web application designed to provide personalized recommendations for courses, videos, and job openings based on user inputs. This repository contains the backend code for the application, built using Flask and MongoDB.",
     imageUrl: "https://placehold.co/600x400.png?bg=6f42c1&fc=ffffff",
     imageHint: "portfolio design",
     techStack: ["HTML", "CSS", "JavaScript", "GSAP"],
-    githubUrl: "#",
+    liveDemoUrl: "#",
+    githubUrl: "https://github.com/SankalpaDutta012/Skill-Up-Website.git",
   },
    {
     title: "IoT Smart Home Dashboard",

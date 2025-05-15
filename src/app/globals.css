@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -89,9 +90,15 @@ body {
   body {
     @apply bg-background text-foreground;
     @apply transition-colors duration-300;
+    cursor: none !important; /* Hide default cursor globally */
   }
   html {
     scroll-behavior: smooth;
+  }
+  
+  /* Ensure interactive elements also hide default cursor */
+  a, button, [role="button"], input, textarea, select, label {
+    cursor: none !important;
   }
 }
 
