@@ -27,7 +27,7 @@ export default function RootLayout({
     // Initialize audio only on the client side
     if (typeof window !== "undefined") {
       try {
-        audio = new Audio('/sounds/click.mp3'); // Ensure this file exists in /public/sounds/click.mp3
+        audio = new Audio('/sound.wav'); // Updated sound file path
         // Optional: Preload the audio for faster playback on first click
         // audio.preload = "auto"; 
       } catch (error) {
