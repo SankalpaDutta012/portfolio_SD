@@ -1,3 +1,4 @@
+
 "use client";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -15,7 +16,7 @@ interface AchievementItem {
 const achievementsData: AchievementItem[] = [
   {
     id: "rank-card",
-    text: "Secured a rank card in the 2nd Year of College",
+    text: "Secured a rank card in 9th place in the 2nd Year of College (University of Engineering and Management, Kolkata)",
     icon: <Medal className="mr-3 h-6 w-6 flex-shrink-0 text-primary" />,
   },
   {
