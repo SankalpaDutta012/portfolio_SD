@@ -19,6 +19,7 @@ export function Header() {
           <Button variant="link" asChild><Link href="#projects">Projects</Link></Button>
           <Button variant="link" asChild><Link href="#skills">Skills</Link></Button>
           <Button variant="link" asChild><Link href="#field-of-interest">Field of Interest</Link></Button> 
+          <Button variant="link" asChild><Link href="#achievements">Achievements</Link></Button>
           <Button variant="link" asChild><Link href="#contact">Contact</Link></Button>
         </nav>
         <div className="flex flex-1 items-center justify-end space-x-2">
