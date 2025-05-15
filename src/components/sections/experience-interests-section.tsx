@@ -6,14 +6,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Brain, Code, Cpu, ShieldCheck, Cloud, Briefcase, Lightbulb } from 'lucide-react';
 
 // Data
-const experiences = [
+const allItemsData = [
   { title: "IoT", description: "Building connected devices and intelligent systems for the future.", icon: <Cpu className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
   { title: "Cyber Security", description: "Protecting digital assets and ensuring data integrity against threats.", icon: <ShieldCheck className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
   { title: "Cloud Computing", description: "Leveraging cloud platforms for scalable, resilient, and efficient solutions.", icon: <Cloud className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
   { title: "Full Stack Development", description: "Crafting end-to-end web applications with a focus on user experience.", icon: <Briefcase className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
-];
-
-const interests = [
   { title: "Prompt Engineering", description: "Designing effective prompts to harness the power of AI models.", icon: <Brain className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
   { title: "Object Oriented Programming", description: "Applying OOP principles for robust and maintainable software design.", icon: <Code className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
   { title: "Problem Solving", description: "Tackling complex challenges with creative and analytical approaches.", icon: <Lightbulb className="h-10 w-10 sm:h-12 sm:w-12 mx-auto text-primary" /> },
@@ -70,7 +67,7 @@ export function ExperienceInterestsSection() {
 
   return (
     <motion.section
-      id="experience-interests"
+      id="field-of-interest" // Updated ID
       className="section-padding bg-secondary"
       variants={sectionVariants}
       initial="hidden"
@@ -78,25 +75,13 @@ export function ExperienceInterestsSection() {
       viewport={{ once: true, amount: 0.1 }}
     >
       <div className="container">
-        <h2 className="section-title">Experience &amp; Interests</h2>
-
-        <motion.div className="mb-12 md:mb-16" variants={sectionVariants}>
-          <h3 className="text-2xl md:text-3xl font-semibold text-center mb-8 text-primary">My Experience</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-            {experiences.map((exp, index) => (
-              <motion.div key={exp.title + index} variants={cardMotionVariants}>
-                <FlippableCard item={exp} />
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+        <h2 className="section-title">Field of Interest</h2> {/* Updated Title */}
 
         <motion.div variants={sectionVariants}>
-          <h3 className="text-2xl md:text-3xl font-semibold text-center mb-8 text-accent">My Interests</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-            {interests.map((interest, index) => (
-              <motion.div key={interest.title + index} variants={cardMotionVariants}>
-                <FlippableCard item={interest} />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+            {allItemsData.map((item, index) => (
+              <motion.div key={item.title + index} variants={cardMotionVariants}>
+                <FlippableCard item={item} />
               </motion.div>
             ))}
           </div>

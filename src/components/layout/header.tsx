@@ -1,3 +1,4 @@
+
 import Link from "next/link"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Button } from "@/components/ui/button"
@@ -17,7 +18,7 @@ export function Header() {
           <Button variant="link" asChild><Link href="#about">About</Link></Button>
           <Button variant="link" asChild><Link href="#projects">Projects</Link></Button>
           <Button variant="link" asChild><Link href="#skills">Skills</Link></Button>
-          <Button variant="link" asChild><Link href="#experience-interests">Experience</Link></Button>
+          <Button variant="link" asChild><Link href="#field-of-interest">Field of Interest</Link></Button> 
           <Button variant="link" asChild><Link href="#contact">Contact</Link></Button>
         </nav>
         <div className="flex flex-1 items-center justify-end space-x-2">
