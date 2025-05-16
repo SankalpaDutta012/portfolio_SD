@@ -41,7 +41,7 @@ export function HomeSection() {
   useEffect(() => {
     if (!typingLoopActive) return;
 
-    let timerId;
+    let timerId: NodeJS.Timeout;
 
     const handleTyping = () => {
       setCurrentText((prev) => phrases[phraseIndex].substring(0, prev.length + 1));
@@ -129,7 +129,7 @@ export function HomeSection() {
           transition={{ delay: 2.0, duration: 0.5 }} // Simplified fixed delay for buttons
           className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-6"
         >
-          <Button size="lg" asChild>
+          <Button size="lg" variant="accent" asChild>
             <Link href="#projects">
               View Projects <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
