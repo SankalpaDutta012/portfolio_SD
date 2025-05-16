@@ -135,3 +135,19 @@ body {
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
+
+/* For typewriter effect cursor */
+@keyframes blink-animation {
+  from, to { background-color: hsl(var(--foreground)); }
+  50% { background-color: transparent; }
+}
+.typing-cursor {
+  display: inline-block;
+  width: 2px; /* Cursor width */
+  height: 1em; /* Should match the line-height or be slightly less */
+  background-color: hsl(var(--foreground));
+  animation: blink-animation 0.8s step-end infinite;
+  margin-left: 1px;
+  vertical-align: text-bottom; /* Aligns cursor with text baseline */
+}
+

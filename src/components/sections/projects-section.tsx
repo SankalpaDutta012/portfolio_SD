@@ -29,7 +29,7 @@ const projects: Project[] = [
     description: "Skill UP is a web application designed to provide personalized recommendations for courses, videos, and job openings based on user inputs. This repository contains the backend code for the application, built using Flask and MongoDB.",
     imageUrl: "/Skill_up.jpg",
     imageHint: "portfolio design",
-    techStack: ["HTML", "CSS", "JavaScript", "GSAP"],
+    techStack: ["HTML", "CSS", "JavaScript", "Python (Flask)", "MongoDB"],
     liveDemoUrl: "https://www.linkedin.com/posts/sankalpa-dutta-09187525b_webdevelopment-flask-mongodb-activity-7298303624714100737-afBu?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEAFqS0Bb64Jf5qZ92H53O0m4K7OdaLkdZs", // Updated Link
     githubUrl: "https://github.com/SankalpaDutta012/Skill-Up-Website.git",
   },

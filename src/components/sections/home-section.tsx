@@ -7,9 +7,50 @@ import { ArrowRight } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
+const fullTagline = "Full-Stack Developer, IoT Innovator & Tech Enthusiast – Crafting intelligent, real-time solutions that merge AI, sensors, and code into smart systems for a connected future. Passionate about research, traffic optimization, and building digital experiences that simplify life.";
+
 export function HomeSection() {
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  const [typedTagline, setTypedTagline] = useState('');
+  const [isTyping, setIsTyping] = useState(false);
+  const [typingDelayPassed, setTypingDelayPassed] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    // Delay to start typing after initial paragraph animation
+    // The paragraph motion.p has delay: 0.6s, duration: 0.5s. So it fully appears at 1.1s.
+    const timer = setTimeout(() => {
+      setTypingDelayPassed(true);
+      setIsTyping(true); // Start typing and show cursor
+    }, 1100); // Start typing after 1.1s
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!typingDelayPassed || typedTagline.length === fullTagline.length) {
+      if (typedTagline.length === fullTagline.length) {
+        setIsTyping(false); // Typing finished, hide cursor
+      }
+      return;
+    }
+
+    const typingSpeed = 40; // milliseconds per character
+    const intervalId = setInterval(() => {
+      setTypedTagline((prev) => {
+        const nextCharIndex = prev.length;
+        if (nextCharIndex < fullTagline.length) {
+          return fullTagline.substring(0, nextCharIndex + 1);
+        } else {
+          clearInterval(intervalId);
+          setIsTyping(false); // Typing finished
+          return prev;
+        }
+      });
+    }, typingSpeed);
+
+    return () => clearInterval(intervalId);
+  }, [typingDelayPassed, typedTagline, fullTagline]);
+
 
   if (!mounted) {
     // Prevent FOUC or layout shift by rendering nothing or a placeholder on the server
@@ -31,12 +72,12 @@ export function HomeSection() {
           className="mb-8"
         >
           <Image
-            src="/SD11.jpg"
+            src="https://firebasestorage.googleapis.com/v0/b/firebase-studio-users.appspot.com/o/imagereplacements%2Fclwdb0q610008m3wk6z99m3m0%2Foriginal?alt=media&token=3c6c39ff-f01a-4db6-b234-dfbb196d8295"
             alt="Sankalpa Dutta"
             width={200}
             height={200}
             className="rounded-full border-4 border-background shadow-lg object-cover"
-            data-ai-hint="Sankalpa profile"
+            data-ai-hint="profile photo"
             priority
           />
         </motion.div>
@@ -52,14 +93,15 @@ export function HomeSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.5 }}
-          className="mt-6 max-w-2xl text-lg text-foreground/80 sm:text-xl"
+          className="mt-6 max-w-2xl text-lg text-foreground/80 sm:text-xl min-h-[100px] sm:min-h-[80px]" // Added min-height to prevent layout shift
         >
-          Full-Stack Developer, IoT Innovator & Tech Enthusiast – Crafting intelligent, real-time solutions that merge AI, sensors, and code into smart systems for a connected future. Passionate about research, traffic optimization, and building digital experiences that simplify life.
+          {typedTagline}
+          {isTyping && <span className="typing-cursor" />}
         </motion.p>
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.5 }}
+          transition={{ delay: typedTagline.length === fullTagline.length ? 0.2 : (fullTagline.length * 40 / 1000) + 1.1 + 0.2, duration: 0.5 }} // Delay buttons until typing is done or nearly done
           className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-6"
         >
           <Button size="lg" asChild>
