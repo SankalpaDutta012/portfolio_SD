@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowDownCircle } from "lucide-react"; // Added ArrowDownCircle
+import { ArrowRight, ArrowDownCircle } from "lucide-react"; 
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
@@ -118,7 +118,7 @@ export function HomeSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.5 }}
-          className="mt-6 max-w-2xl text-lg text-foreground/80 sm:text-xl min-h-[100px] sm:min-h-[120px] md:min-h-[80px]" // Adjusted min-height for varying phrase lengths
+          className="mt-6 max-w-2xl text-lg text-foreground/80 sm:text-xl min-h-[100px] sm:min-h-[120px] md:min-h-[80px]" 
         >
           {currentText}
           {typingLoopActive && <span className="typing-cursor" />}
@@ -126,7 +126,7 @@ export function HomeSection() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.0, duration: 0.5 }} // Simplified fixed delay for buttons
+          transition={{ delay: 2.0, duration: 0.5 }} 
           className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-6"
         >
           <Button size="lg" variant="accent" asChild>
@@ -144,14 +144,14 @@ export function HomeSection() {
       <motion.a
         href="#about-skills"
         aria-label="Scroll to about section"
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 text-primary hover:text-accent transition-colors"
+        className="absolute bottom-10 right-10 z-20 text-primary hover:text-accent transition-colors"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2.5, duration: 0.5, ease: "easeInOut" }} // Delay after other elements
+        transition={{ delay: 2.5, duration: 0.5, ease: "easeInOut" }} 
         whileHover={{ scale: 1.1 }}
       >
         <motion.div
-          animate={{ y: [0, -8, 0] }} // Bounce animation
+          animate={{ y: [0, -8, 0] }} 
           transition={{
             duration: 1.5,
             repeat: Infinity,

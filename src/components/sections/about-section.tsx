@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle, ExternalLink, Code, Database, Cloud, Cog, Palette, Cpu, ArrowDownCircle } from "lucide-react";
 import { motion, animate } from "framer-motion";
 import Link from "next/link";
-import React, { useState } from "react"; // Ensure React is imported for cloneElement
+import React, { useState } from "react";
 import { Progress } from "@/components/ui/progress";
 
 const personalInfoAndInterests = [
@@ -16,7 +16,6 @@ const personalInfoAndInterests = [
   "Continuously learning and adapting to new technologies.",
 ];
 
-// Skills data moved here
 interface Skill {
   name: string;
   proficiency: number;
@@ -79,18 +78,17 @@ const AnimatedProgress: React.FC<AnimatedProgressProps> = ({ value, className, '
 export function AboutSection() {
   return (
     <motion.section 
-      id="about-skills" // Updated ID
-      className="relative section-padding bg-secondary" // Added relative
+      id="about-skills"
+      className="relative section-padding bg-secondary"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.1 }} // Adjusted amount for larger section
+      viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.5 }}
     >
       <div className="container">
-        <h2 className="section-title">About & Skills</h2> {/* Updated Title */}
+        <h2 className="section-title">About & Skills</h2>
         
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-start"> {/* Reduced lg:gap-20 to lg:gap-16 */}
-          {/* Column 1: About Me Card */}
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -130,15 +128,14 @@ export function AboutSection() {
             </Card>
           </motion.div>
 
-          {/* Column 2: Technical Skills */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <h3 className="text-2xl md:text-3xl font-bold text-center md:text-left mb-6 text-foreground">Technical Skills</h3> {/* Reduced mb-8 to mb-6 */}
-            <div className="grid gap-4 md:gap-5 grid-cols-1 lg:grid-cols-2"> {/* Reduced gap-6 to gap-4/5 */}
+            <h3 className="text-2xl md:text-3xl font-bold text-center md:text-left mb-6 text-foreground">Technical Skills</h3>
+            <div className="grid gap-4 md:gap-5 grid-cols-1 lg:grid-cols-2">
               {skillsData.map((skill, index) => (
                 <motion.div
                   key={skill.name}
@@ -175,7 +172,7 @@ export function AboutSection() {
       <motion.a
         href="#projects"
         aria-label="Scroll to projects section"
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 text-primary hover:text-accent transition-colors"
+        className="absolute bottom-10 right-10 z-20 text-primary hover:text-accent transition-colors"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.0, duration: 0.5, ease: "easeInOut" }} 

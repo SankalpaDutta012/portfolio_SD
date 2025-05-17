@@ -72,10 +72,10 @@ export function ContactSection() {
   return (
     <motion.section 
       id="contact" 
-      className="section-padding relative" // Added relative
+      className="section-padding relative" 
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.1 }} // Adjusted amount for larger section
+      viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.5 }}
     >
       <div className="container">
@@ -178,7 +178,7 @@ export function ContactSection() {
       <motion.a
         href="#home"
         aria-label="Scroll to home section"
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 text-primary hover:text-accent transition-colors"
+        className="absolute bottom-10 right-10 z-20 text-primary hover:text-accent transition-colors"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.0, duration: 0.5, ease: "easeInOut" }} 

@@ -1,10 +1,10 @@
 
-"use client"; // Add this directive
+"use client"; 
 
-import type { Project } from "@/components/ui/project-card"; // Keep existing type import
+import type { Project } from "@/components/ui/project-card"; 
 import { ProjectCard } from "@/components/ui/project-card";
 import { motion } from "framer-motion"; 
-import { ArrowDownCircle } from "lucide-react"; // Added
+import { ArrowDownCircle } from "lucide-react";
 
 const projects: Project[] = [
   {
@@ -31,7 +31,7 @@ const projects: Project[] = [
     imageUrl: "/SkillUp.jpg",
     imageHint: "portfolio design",
     techStack: ["HTML", "CSS", "JavaScript", "Python (Flask)", "MongoDB"],
-    liveDemoUrl: "https://www.linkedin.com/posts/sankalpa-dutta-09187525b_webdevelopment-flask-mongodb-activity-7298303624714100737-afBu?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEAFqS0Bb64Jf5qZ92H53O0m4K7OdaLkdZs", // Updated Link
+    liveDemoUrl: "https://www.linkedin.com/posts/sankalpa-dutta-09187525b_webdevelopment-flask-mongodb-activity-7298303624714100737-afBu?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEAFqS0Bb64Jf5qZ92H53O0m4K7OdaLkdZs", 
     githubUrl: "https://github.com/SankalpaDutta012/Skill-Up-Website.git",
   },
    {
@@ -58,13 +58,13 @@ const cardVariants = {
 
 export function ProjectsSection() {
   return (
-    <motion.section // Changed to motion.section
+    <motion.section 
       id="projects"
-      className="relative section-padding" // Added relative
-      initial="hidden" // Added for section entrance
-      whileInView="visible" // Added for section entrance
-      viewport={{ once: true, amount: 0.1 }} // Added for section entrance
-      variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 }}}} // Added for section entrance
+      className="relative section-padding" 
+      initial="hidden" 
+      whileInView="visible" 
+      viewport={{ once: true, amount: 0.1 }} 
+      variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 }}}} 
     >
       <div className="container">
         <motion.h2
@@ -94,7 +94,7 @@ export function ProjectsSection() {
       <motion.a
         href="#field-of-interest"
         aria-label="Scroll to field of interest section"
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 text-primary hover:text-accent transition-colors"
+        className="absolute bottom-10 right-10 z-20 text-primary hover:text-accent transition-colors"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.0, duration: 0.5, ease: "easeInOut" }} 
