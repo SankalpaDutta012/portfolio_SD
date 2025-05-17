@@ -17,7 +17,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
 import { submitContactForm, type ContactFormState } from "@/app/actions";
-import { Loader2, MapPin, Mail, Home } from "lucide-react";
+import { Loader2, MapPin, Mail, Home, ArrowUpCircle } from "lucide-react";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -72,10 +72,10 @@ export function ContactSection() {
   return (
     <motion.section 
       id="contact" 
-      className="section-padding"
+      className="section-padding relative" // Added relative
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.1 }} // Adjusted amount for larger section
       transition={{ duration: 0.5 }}
     >
       <div className="container">
@@ -162,7 +162,7 @@ export function ContactSection() {
               <CardContent className="space-y-4">
                 <div className="flex items-center">
                   <Mail className="mr-3 h-5 w-5 text-primary" />
-                  <a href="mailto:your.email@example.com" className="text-muted-foreground hover:text-foreground transition-colors">
+                  <a href="mailto:sankalpadutta04@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors">
                     sankalpadutta04@gmail.com
                   </a>
                 </div>
@@ -175,6 +175,26 @@ export function ContactSection() {
           </div>
         </div>
       </div>
+      <motion.a
+        href="#home"
+        aria-label="Scroll to home section"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 text-primary hover:text-accent transition-colors"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.0, duration: 0.5, ease: "easeInOut" }} 
+        whileHover={{ scale: 1.1 }}
+      >
+        <motion.div
+          animate={{ y: [0, -8, 0] }} 
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <ArrowUpCircle size={40} strokeWidth={1.5} />
+        </motion.div>
+      </motion.a>
     </motion.section>
   );
 }
