@@ -110,7 +110,7 @@ export function HomeSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.5 }}
-          className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl"
+          className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl animated-neon-text"
         >
           Sankalpa Dutta
         </motion.h1>
