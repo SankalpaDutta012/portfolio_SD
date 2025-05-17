@@ -7,7 +7,6 @@ import { useFormStatus } from "react-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
@@ -17,7 +16,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
 import { submitContactForm, type ContactFormState } from "@/app/actions";
-import { Loader2, MapPin, Mail, Home, ArrowUpCircle } from "lucide-react";
+import { Loader2, ArrowUpCircle, Mail, Linkedin, Github } from "lucide-react";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -80,7 +79,7 @@ export function ContactSection() {
     >
       <div className="container">
         <h2 className="section-title">Get In Touch</h2>
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="max-w-xl mx-auto"> {/* Centered the form card container */}
           <Card className="w-full shadow-lg">
             <CardHeader>
               <CardTitle>Contact Me</CardTitle>
@@ -132,47 +131,41 @@ export function ContactSection() {
               </form>
             </CardContent>
           </Card>
-          <div className="space-y-6 pt-0 md:pt-12">
-            <Card className="shadow-lg">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <MapPin className="mr-2 h-6 w-6 text-primary" /> My Location
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  I'm based in Kolkata, India, but work with clients worldwide.
-                </p>
-                <div className="aspect-video w-full overflow-hidden rounded-md border">
-                  <Image
-                    src="https://placehold.co/600x400.png"
-                    alt="Map placeholder showing Kolkata"
-                    width={600}
-                    height={400}
-                    className="object-cover w-full h-full"
-                    data-ai-hint="map India"
-                  />
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="shadow-lg">
-              <CardHeader>
-                <CardTitle>Contact Information</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center">
-                  <Mail className="mr-3 h-5 w-5 text-primary" />
-                  <a href="mailto:sankalpadutta04@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors">
-                    sankalpadutta04@gmail.com
-                  </a>
-                </div>
-                <div className="flex items-center">
-                  <Home className="mr-3 h-5 w-5 text-primary" />
-                  <p className="text-muted-foreground">Kolkata, India</p>
-                </div>
-              </CardContent>
-            </Card>
+
+          <div className="mt-10 flex justify-center items-center space-x-6 md:space-x-8">
+            <motion.a
+              href="mailto:sankalpadutta04@gmail.com"
+              aria-label="Send an email"
+              whileHover={{ scale: 1.15, color: 'hsl(var(--primary))' }}
+              transition={{ type: 'spring', stiffness: 300 }}
+              className="text-foreground/70 hover:text-primary"
+            >
+              <Mail size={32} strokeWidth={1.5} />
+            </motion.a>
+            <motion.a
+              href="https://www.linkedin.com/in/sankalpa-dutta-09187525b/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View LinkedIn profile"
+              whileHover={{ scale: 1.15, color: 'hsl(var(--primary))' }}
+              transition={{ type: 'spring', stiffness: 300 }}
+              className="text-foreground/70 hover:text-primary"
+            >
+              <Linkedin size={32} strokeWidth={1.5} />
+            </motion.a>
+            <motion.a
+              href="https://github.com/SankalpaDutta012"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View GitHub profile"
+              whileHover={{ scale: 1.15, color: 'hsl(var(--primary))' }}
+              transition={{ type: 'spring', stiffness: 300 }}
+              className="text-foreground/70 hover:text-primary"
+            >
+              <Github size={32} strokeWidth={1.5} />
+            </motion.a>
           </div>
+
         </div>
       </div>
       <motion.a
