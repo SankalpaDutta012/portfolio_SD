@@ -91,86 +91,88 @@ export function AboutSection() {
       <div className="container">
         <h2 className="section-title">About & Skills</h2> {/* Updated Title */}
         
-        {/* About Me Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <Card className="shadow-lg mb-16">
-            <CardHeader>
-              <CardTitle className="text-2xl text-center md:text-left">A Glimpse Into My World</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6 text-lg text-muted-foreground">
-              <p>
-                Hello! I'm Sankalpa, a dedicated Full-Stack Developer with a knack for building robust and user-friendly applications. My journey in tech is driven by a constant curiosity and a desire to solve real-world problems through innovative solutions.
-              </p>
-              <p>
-                Currently, I focus on leveraging cutting-edge technologies to create seamless digital experiences. Here's a bit more about what I do and what I love:
-              </p>
-              <ul className="space-y-3">
-                {personalInfoAndInterests.map((item, index) => (
-                  <li key={index} className="flex items-start">
-                    <CheckCircle className="mr-3 mt-1 h-5 w-5 flex-shrink-0 text-primary" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <p>
-                I believe in the power of collaboration and continuous improvement, always eager to take on new challenges and expand my skillset.
-              </p>
-            </CardContent>
-            <CardFooter className="flex justify-center md:justify-start pt-4">
-              <Button asChild size="lg">
-                <Link href="https://drive.google.com/file/d/1WBMGNiKuOhofJQsTQTLRseM1tixCBR4m/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
-                  View My CV <ExternalLink className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </CardFooter>
-          </Card>
-        </motion.div>
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
+          {/* Column 1: About Me Card */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <Card className="shadow-lg h-full flex flex-col"> {/* Removed mb-16, added h-full and flex flex-col */}
+              <CardHeader>
+                <CardTitle className="text-2xl text-center md:text-left">A Glimpse Into My World</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6 text-lg text-muted-foreground flex-grow"> {/* Added flex-grow */}
+                <p>
+                  Hello! I'm Sankalpa, a dedicated Full-Stack Developer with a knack for building robust and user-friendly applications. My journey in tech is driven by a constant curiosity and a desire to solve real-world problems through innovative solutions.
+                </p>
+                <p>
+                  Currently, I focus on leveraging cutting-edge technologies to create seamless digital experiences. Here's a bit more about what I do and what I love:
+                </p>
+                <ul className="space-y-3">
+                  {personalInfoAndInterests.map((item, index) => (
+                    <li key={index} className="flex items-start">
+                      <CheckCircle className="mr-3 mt-1 h-5 w-5 flex-shrink-0 text-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p>
+                  I believe in the power of collaboration and continuous improvement, always eager to take on new challenges and expand my skillset.
+                </p>
+              </CardContent>
+              <CardFooter className="flex justify-center md:justify-start pt-4">
+                <Button asChild size="lg">
+                  <Link href="https://drive.google.com/file/d/1WBMGNiKuOhofJQsTQTLRseM1tixCBR4m/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                    View My CV <ExternalLink className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </CardFooter>
+            </Card>
+          </motion.div>
 
-        {/* Technical Skills */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <h3 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">Technical Skills</h3>
-          <div className="grid gap-8 md:grid-cols-2">
-            {skillsData.map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                custom={index}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }}
-                variants={skillCardVariants}
-              >
-                <Card className="shadow-md h-full">
-                  <CardHeader className="pb-2">
-                    <CardTitle className="flex items-center justify-between text-xl">
-                      <span className="flex items-center">
-                        {React.cloneElement(skill.icon, { className: "mr-3 h-6 w-6 text-primary"})}
-                        {skill.name}
-                      </span>
-                      <span className="text-sm font-medium text-muted-foreground">{skill.proficiency}%</span>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <AnimatedProgress 
-                      value={skill.proficiency} 
-                      aria-label={`${skill.name} proficiency ${skill.proficiency}%`} 
-                      className="h-3"
-                    />
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+          {/* Column 2: Technical Skills */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <h3 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">Technical Skills</h3>
+            <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2"> {/* Adjusted grid for skills within its column */}
+              {skillsData.map((skill, index) => (
+                <motion.div
+                  key={skill.name}
+                  custom={index}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.5 }}
+                  variants={skillCardVariants}
+                >
+                  <Card className="shadow-md h-full">
+                    <CardHeader className="pb-2">
+                      <CardTitle className="flex items-center justify-between text-xl">
+                        <span className="flex items-center">
+                          {React.cloneElement(skill.icon, { className: "mr-3 h-6 w-6 text-primary"})}
+                          {skill.name}
+                        </span>
+                        <span className="text-sm font-medium text-muted-foreground">{skill.proficiency}%</span>
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <AnimatedProgress 
+                        value={skill.proficiency} 
+                        aria-label={`${skill.name} proficiency ${skill.proficiency}%`} 
+                        className="h-3"
+                      />
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
     </motion.section>
   );
