@@ -139,8 +139,8 @@ export function AboutSection() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <h3 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">Technical Skills</h3>
-            <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2"> {/* Adjusted grid for skills within its column */}
+            <h3 className="text-2xl md:text-3xl font-bold text-center md:text-left mb-8 text-foreground">Technical Skills</h3>
+            <div className="grid gap-6 grid-cols-1 lg:grid-cols-2"> {/* Adjusted grid for skills */}
               {skillsData.map((skill, index) => (
                 <motion.div
                   key={skill.name}
