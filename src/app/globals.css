@@ -9,77 +9,77 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 100%; /* White */
-    --foreground: 0 0% 15%; /* Dark Gray for text */
+    --background: 270 60% 98%; /* Very Light Lavender/White */
+    --foreground: 270 30% 20%; /* Dark Purple/Gray for text */
 
-    --card: 0 0% 97%; /* Light gray for cards */
-    --card-foreground: 0 0% 15%;
+    --card: 270 50% 95%; /* Light Lavender for cards */
+    --card-foreground: 270 30% 20%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 15%;
+    --popover: 270 60% 98%;
+    --popover-foreground: 270 30% 20%;
 
-    --primary: 0 70% 50%; /* Red */
+    --primary: 320 85% 55%; /* Neon Pink/Magenta */
     --primary-foreground: 0 0% 100%; /* White */
 
-    --secondary: 45 30% 95%; /* Light muted yellow/gray */
-    --secondary-foreground: 0 0% 30%; /* Darker text on secondary */
+    --secondary: 270 40% 90%; /* Lighter muted purple */
+    --secondary-foreground: 270 25% 30%; /* Darker text on secondary */
 
-    --muted: 45 30% 95%;
-    --muted-foreground: 0 0% 45%; /* Muted text */
+    --muted: 270 40% 90%;
+    --muted-foreground: 270 20% 45%; /* Muted text */
 
-    --accent: 50 90% 50%; /* Yellow */
-    --accent-foreground: 0 0% 10%; /* Dark text for yellow accent */
+    --accent: 190 85% 55%; /* Neon Cyan/Blue */
+    --accent-foreground: 270 10% 10%; /* Dark text for neon accent */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 10% 85%; /* Light border */
-    --input: 0 10% 90%; /* Light input background */
-    --ring: 0 70% 53%; /* Primary color for rings */
+    --border: 270 30% 85%; /* Light purple border */
+    --input: 270 40% 92%; /* Light purple input background */
+    --ring: 320 85% 58%; /* Primary neon color for rings */
 
     --radius: 0.5rem;
 
-    --chart-1: 0 70% 60%;   /* Red */
-    --chart-2: 50 85% 55%;  /* Yellow */
-    --chart-3: 25 70% 50%;  /* Orange (mix of red and yellow) */
-    --chart-4: 0 0% 60%;    /* Gray for contrast */
-    --chart-5: 30 60% 45%;  /* Darker orange/brown */
+    --chart-1: 320 90% 60%;   /* Neon Pink/Magenta */
+    --chart-2: 190 90% 60%;  /* Neon Cyan/Blue */
+    --chart-3: 280 80% 65%;  /* Neon Purple (complementary) */
+    --chart-4: 270 20% 60%;    /* Muted Purple for contrast */
+    --chart-5: 45 90% 55%;   /* Neon Yellow/Orange (contrasting accent) */
   }
 
   .dark {
-    --background: 0 0% 4%; /* Very Dark Gray, almost black */
-    --foreground: 0 0% 90%; /* Light Gray for text */
+    --background: 270 30% 10%; /* Dark Purple */
+    --foreground: 270 40% 90%; /* Light Lavender/Off-white */
 
-    --card: 0 0% 7%; /* Slightly lighter than background */
-    --card-foreground: 0 0% 90%;
+    --card: 270 25% 15%; /* Slightly lighter dark purple for cards */
+    --card-foreground: 270 40% 90%;
 
-    --popover: 0 0% 2%; /* Even darker for popovers */
-    --popover-foreground: 0 0% 90%;
+    --popover: 270 30% 8%; /* Even darker purple for popovers */
+    --popover-foreground: 270 40% 90%;
 
-    --primary: 0 75% 55%; /* Red - slightly brighter for dark mode */
-    --primary-foreground: 0 0% 100%; /* White */
+    --primary: 320 90% 60%; /* Neon Pink/Magenta - vibrant */
+    --primary-foreground: 270 10% 10%; /* Very dark text for neon primary */
 
-    --secondary: 0 0% 10%; /* Darker muted elements */
-    --secondary-foreground: 0 0% 70%; /* Muted text on secondary */
+    --secondary: 270 20% 20%; /* Darker muted purple elements */
+    --secondary-foreground: 270 30% 70%; /* Muted text on secondary */
 
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 55%; /* More muted text */
+    --muted: 270 20% 20%;
+    --muted-foreground: 270 25% 55%; /* More muted text */
 
-    --accent: 50 95% 55%; /* Yellow - slightly brighter for dark mode */
-    --accent-foreground: 0 0% 5%; /* Very dark text for yellow accent on dark mode */
+    --accent: 190 90% 60%; /* Neon Cyan/Blue - vibrant */
+    --accent-foreground: 270 5% 5%; /* Very dark text for neon accent on dark mode */
 
-    --destructive: 0 70% 55%; /* Adjusted destructive for dark */
+    --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 12%; /* Subtle dark border */
-    --input: 0 0% 12%; /* Dark input background */
-    --ring: 0 75% 60%; /* Primary color for rings in dark */
+    --border: 270 20% 25%; /* Subtle dark purple border */
+    --input: 270 20% 22%; /* Dark purple input background */
+    --ring: 320 90% 65%; /* Primary neon color for rings in dark */
     
-    --chart-1: 0 70% 50%;   /* Red */
-    --chart-2: 50 90% 50%;  /* Yellow */
-    --chart-3: 25 75% 55%;  /* Orange */
-    --chart-4: 0 0% 70%;    /* Light Gray */
-    --chart-5: 30 65% 40%;  /* Darker orange/brown */
+    --chart-1: 320 85% 58%;   /* Neon Pink/Magenta */
+    --chart-2: 190 85% 58%;  /* Neon Cyan/Blue */
+    --chart-3: 280 75% 62%;  /* Neon Purple */
+    --chart-4: 270 30% 70%;    /* Light Muted Purple/Gray */
+    --chart-5: 50 90% 58%;   /* Neon Yellow (contrasting accent) */
   }
 }
 
@@ -150,4 +150,3 @@ body {
   margin-left: 1px;
   vertical-align: text-bottom; /* Aligns cursor with text baseline */
 }
-
