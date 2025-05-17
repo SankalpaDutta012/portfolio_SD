@@ -143,7 +143,7 @@ export function ContactSection() {
               <Mail size={32} strokeWidth={1.5} />
             </motion.a>
             <motion.a
-              href="https://www.linkedin.com/in/sankalpa-dutta-09187525b/"
+              href="https://www.linkedin.com/in/sankalpa-dutta-09187525b"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="View LinkedIn profile"
