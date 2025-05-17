@@ -10,7 +10,7 @@ import { Progress } from "@/components/ui/progress";
 
 const personalInfoAndInterests = [
   "Developing scalable web applications with modern frameworks.",
-  "Expertise in React, Python, and C++ ecosystems.",
+  "Expertise in React, Python, and C++ ecosystems.", // This line was previously updated
   "Passionate about exploring IoT, smart technologies, and AI.",
   "Enjoys diving into Bengali literature and watching anime.",
   "Continuously learning and adapting to new technologies.",
@@ -26,6 +26,7 @@ interface Skill {
 const skillsData: Skill[] = [
   { name: "HTML5", proficiency: 95, icon: <Code /> },
   { name: "CSS3 & Tailwind CSS", proficiency: 90, icon: <Palette /> },
+  { name: "JavaScript", proficiency: 90, icon: <Code /> },
   { name: "React & Next.js", proficiency: 90, icon: <Code /> },
   { name: "Python (Flask/Django)", proficiency: 75, icon: <Code /> },
   { name: "C++", proficiency: 80, icon: <Code /> },
@@ -88,7 +89,7 @@ export function AboutSection() {
       <div className="container">
         <h2 className="section-title">About & Skills</h2> {/* Updated Title */}
         
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-start"> {/* Reduced lg:gap-20 to lg:gap-16 */}
           {/* Column 1: About Me Card */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -96,11 +97,11 @@ export function AboutSection() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Card className="shadow-lg h-full flex flex-col"> {/* Removed mb-16, added h-full and flex flex-col */}
+            <Card className="shadow-lg h-full flex flex-col">
               <CardHeader>
                 <CardTitle className="text-2xl text-center md:text-left">A Glimpse Into My World</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6 text-lg text-muted-foreground flex-grow"> {/* Added flex-grow */}
+              <CardContent className="space-y-6 text-lg text-muted-foreground flex-grow">
                 <p>
                   Hello! I'm Sankalpa, a dedicated Full-Stack Developer with a knack for building robust and user-friendly applications. My journey in tech is driven by a constant curiosity and a desire to solve real-world problems through innovative solutions.
                 </p>
@@ -136,8 +137,8 @@ export function AboutSection() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <h3 className="text-2xl md:text-3xl font-bold text-center md:text-left mb-8 text-foreground">Technical Skills</h3>
-            <div className="grid gap-6 grid-cols-1 lg:grid-cols-2"> {/* Adjusted grid for skills */}
+            <h3 className="text-2xl md:text-3xl font-bold text-center md:text-left mb-6 text-foreground">Technical Skills</h3> {/* Reduced mb-8 to mb-6 */}
+            <div className="grid gap-4 md:gap-5 grid-cols-1 lg:grid-cols-2"> {/* Reduced gap-6 to gap-4/5 */}
               {skillsData.map((skill, index) => (
                 <motion.div
                   key={skill.name}
