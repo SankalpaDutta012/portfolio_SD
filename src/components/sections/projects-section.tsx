@@ -9,7 +9,7 @@ const projects: Project[] = [
   {
     title: "RoamFree Travel App",
     description: "A comprehensive travel application to plan and book your adventures. Discover destinations, find accommodations, and manage your itineraries.",
-    imageUrl: "/r1.jpg", 
+    imageUrl: "/RoamFree.jpg", 
     imageHint: "travel collage", 
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB"],
     liveDemoUrl: "https://roamfree-travel-app.onrender.com/",
@@ -18,7 +18,7 @@ const projects: Project[] = [
   {
     title: "Algo_tracker",
     description: "Algo Tracker is your personal companion for tracking algorithm practice, helping you monitor progress, stay consistent, and reach your coding goals with ease.",
-    imageUrl: "/bestAlgo.jpg",
+    imageUrl: "/ALGT.jpg",
     imageHint: "task app interface",
     techStack: ["React", "Node.js","TypeScript", "Next.js", "Tailwind CSS", "MongoDB"],
     liveDemoUrl: "https://algo-tracker-website.onrender.com/",
@@ -27,7 +27,7 @@ const projects: Project[] = [
   {
     title: "Skill_Up",
     description: "Skill UP is a web application designed to provide personalized recommendations for courses, videos, and job openings based on user inputs. This repository contains the backend code for the application, built using Flask and MongoDB.",
-    imageUrl: "/Skill_up.jpg",
+    imageUrl: "/SkillUp.jpg",
     imageHint: "portfolio design",
     techStack: ["HTML", "CSS", "JavaScript", "Python (Flask)", "MongoDB"],
     liveDemoUrl: "https://www.linkedin.com/posts/sankalpa-dutta-09187525b_webdevelopment-flask-mongodb-activity-7298303624714100737-afBu?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEAFqS0Bb64Jf5qZ92H53O0m4K7OdaLkdZs", // Updated Link

@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { HomeSection } from "@/components/sections/home-section";
 import { AboutSection } from "@/components/sections/about-section";
 import { ProjectsSection } from "@/components/sections/projects-section";
-import { SkillsSection } from "@/components/sections/skills-section";
+// SkillsSection is removed as it's merged into AboutSection
 import { ExperienceInterestsSection } from "@/components/sections/experience-interests-section";
 import { AchievementsSection } from "@/components/sections/achievements-section";
 import { ContactSection } from "@/components/sections/contact-section";
@@ -17,9 +17,9 @@ export default function PortfolioPage() {
   return (
     <>
       <HomeSection />
-      <AboutSection />
+      <AboutSection /> {/* This now includes skills */}
       <ProjectsSection />
-      <SkillsSection />
+      {/* <SkillsSection />  Removed */}
       <ExperienceInterestsSection />
       <AchievementsSection />
       <ContactSection />

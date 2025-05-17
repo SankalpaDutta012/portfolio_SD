@@ -15,9 +15,9 @@ export function Header() {
           <span className="font-bold">Sankalpa's Space</span>
         </Link>
         <nav className="flex flex-1 items-center space-x-2 md:space-x-4 text-sm md:text-base">
-          <Button variant="link" asChild><Link href="#about">About</Link></Button>
+          <Button variant="link" asChild><Link href="#about-skills">About & Skills</Link></Button> {/* Updated Link */}
           <Button variant="link" asChild><Link href="#projects">Projects</Link></Button>
-          <Button variant="link" asChild><Link href="#skills">Skills</Link></Button>
+          {/* <Button variant="link" asChild><Link href="#skills">Skills</Link></Button> Removed */}
           <Button variant="link" asChild><Link href="#field-of-interest">Field of Interest</Link></Button> 
           <Button variant="link" asChild><Link href="#achievements">Achievements</Link></Button>
           <Button variant="link" asChild><Link href="#contact">Contact</Link></Button>
