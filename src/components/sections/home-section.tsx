@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowDownCircle } from "lucide-react"; // Added ArrowDownCircle
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
@@ -141,6 +141,26 @@ export function HomeSection() {
           </Button>
         </motion.div>
       </div>
+      <motion.a
+        href="#about-skills"
+        aria-label="Scroll to about section"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 text-primary hover:text-accent transition-colors"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 2.5, duration: 0.5, ease: "easeInOut" }} // Delay after other elements
+        whileHover={{ scale: 1.1 }}
+      >
+        <motion.div
+          animate={{ y: [0, -8, 0] }} // Bounce animation
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <ArrowDownCircle size={40} strokeWidth={1.5} />
+        </motion.div>
+      </motion.a>
     </section>
   );
 }
