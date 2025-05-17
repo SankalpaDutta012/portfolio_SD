@@ -3,13 +3,14 @@
 
 import type { Project } from "@/components/ui/project-card"; // Keep existing type import
 import { ProjectCard } from "@/components/ui/project-card";
-import { motion } from "framer-motion"; // Add this import
+import { motion } from "framer-motion"; 
+import { ArrowDownCircle } from "lucide-react"; // Added
 
 const projects: Project[] = [
   {
     title: "RoamFree Travel App",
     description: "A comprehensive travel application to plan and book your adventures. Discover destinations, find accommodations, and manage your itineraries.",
-    imageUrl: "/RoamFree.jpg", 
+    imageUrl: "data:image/svg+xml,%3Csvg%20width%3D%22600%22%20height%3D%22400%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Crect%20width%3D%22600%22%20height%3D%22400%22%20fill%3D%22%23ddd%22%3E%3C/rect%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20font-family%3D%22Arial%22%20font-size%3D%2224%22%20fill%3D%22%23333%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%3EGenerated%20Image%3C/text%3E%3C/svg%3E",
     imageHint: "travel collage", 
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB"],
     liveDemoUrl: "https://roamfree-travel-app.onrender.com/",
@@ -57,7 +58,14 @@ const cardVariants = {
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="section-padding">
+    <motion.section // Changed to motion.section
+      id="projects"
+      className="relative section-padding" // Added relative
+      initial="hidden" // Added for section entrance
+      whileInView="visible" // Added for section entrance
+      viewport={{ once: true, amount: 0.1 }} // Added for section entrance
+      variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 }}}} // Added for section entrance
+    >
       <div className="container">
         <motion.h2
           className="section-title"
@@ -83,6 +91,26 @@ export function ProjectsSection() {
           ))}
         </div>
       </div>
-    </section>
+      <motion.a
+        href="#field-of-interest"
+        aria-label="Scroll to field of interest section"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 text-primary hover:text-accent transition-colors"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.0, duration: 0.5, ease: "easeInOut" }} 
+        whileHover={{ scale: 1.1 }}
+      >
+        <motion.div
+          animate={{ y: [0, -8, 0] }} 
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <ArrowDownCircle size={40} strokeWidth={1.5} />
+        </motion.div>
+      </motion.a>
+    </motion.section>
   );
 }

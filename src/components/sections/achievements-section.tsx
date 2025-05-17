@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Award, Medal, Zap, ExternalLink, Trophy } from "lucide-react";
+import { Award, Medal, Zap, ExternalLink, Trophy, ArrowDownCircle } from "lucide-react"; // Added ArrowDownCircle
 
 interface AchievementItem {
   id: string;
@@ -62,7 +62,7 @@ export function AchievementsSection() {
   return (
     <motion.section
       id="achievements"
-      className="section-padding bg-secondary"
+      className="relative section-padding bg-secondary" // Added relative
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
@@ -106,6 +106,26 @@ export function AchievementsSection() {
           </Card>
         </div>
       </div>
+      <motion.a
+        href="#contact"
+        aria-label="Scroll to contact section"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 text-primary hover:text-accent transition-colors"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.0, duration: 0.5, ease: "easeInOut" }} 
+        whileHover={{ scale: 1.1 }}
+      >
+        <motion.div
+          animate={{ y: [0, -8, 0] }} 
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <ArrowDownCircle size={40} strokeWidth={1.5} />
+        </motion.div>
+      </motion.a>
     </motion.section>
   );
 }

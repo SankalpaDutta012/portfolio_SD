@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
-import { Brain, Code, Cpu, ShieldCheck, Cloud, Briefcase, Lightbulb, Layers, BrainCircuit, Network, Users } from 'lucide-react';
+import { Brain, Code, Cpu, ShieldCheck, Cloud, Briefcase, Lightbulb, Layers, BrainCircuit, Network, Users, ArrowDownCircle } from 'lucide-react'; // Added ArrowDownCircle
 
 // Data
 const allItemsData = [
@@ -72,7 +72,7 @@ export function ExperienceInterestsSection() {
   return (
     <motion.section
       id="field-of-interest" // Updated ID
-      className="section-padding bg-secondary"
+      className="relative section-padding bg-secondary" // Added relative
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
@@ -91,7 +91,26 @@ export function ExperienceInterestsSection() {
           </div>
         </motion.div>
       </div>
+      <motion.a
+        href="#achievements"
+        aria-label="Scroll to achievements section"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 text-primary hover:text-accent transition-colors"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.0, duration: 0.5, ease: "easeInOut" }} 
+        whileHover={{ scale: 1.1 }}
+      >
+        <motion.div
+          animate={{ y: [0, -8, 0] }} 
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <ArrowDownCircle size={40} strokeWidth={1.5} />
+        </motion.div>
+      </motion.a>
     </motion.section>
   );
 }
-
