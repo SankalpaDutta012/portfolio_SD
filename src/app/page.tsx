@@ -5,6 +5,7 @@ import { AboutSection } from "@/components/sections/about-section";
 import { ProjectsSection } from "@/components/sections/projects-section";
 // SkillsSection is removed as it's merged into AboutSection
 import { ExperienceInterestsSection } from "@/components/sections/experience-interests-section";
+import { JourneySection } from "@/components/sections/journey-section"; // Added
 import { AchievementsSection } from "@/components/sections/achievements-section";
 import { ContactSection } from "@/components/sections/contact-section";
 
@@ -21,6 +22,7 @@ export default function PortfolioPage() {
       <ProjectsSection />
       {/* <SkillsSection />  Removed */}
       <ExperienceInterestsSection />
+      <JourneySection /> {/* Added before Achievements */}
       <AchievementsSection />
       <ContactSection />
     </>

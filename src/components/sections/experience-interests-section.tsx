@@ -92,8 +92,8 @@ export function ExperienceInterestsSection() {
         </motion.div>
       </div>
       <motion.a
-        href="#achievements"
-        aria-label="Scroll to achievements section"
+        href="#journey" /* Updated href */
+        aria-label="Scroll to journey section"
         className="absolute bottom-10 right-10 z-20 text-primary hover:text-accent transition-colors"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
