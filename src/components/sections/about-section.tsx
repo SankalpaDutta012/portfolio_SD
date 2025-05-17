@@ -10,7 +10,7 @@ import { Progress } from "@/components/ui/progress";
 
 const personalInfoAndInterests = [
   "Developing scalable web applications with modern frameworks.",
-  "Expertise in JavaScript, TypeScript, React, Node.js, Python, and C++ ecosystems.",
+  "Expertise in React, Python, and C++ ecosystems.",
   "Passionate about exploring IoT, smart technologies, and AI.",
   "Enjoys diving into Bengali literature and watching anime.",
   "Continuously learning and adapting to new technologies.",
@@ -26,10 +26,7 @@ interface Skill {
 const skillsData: Skill[] = [
   { name: "HTML5", proficiency: 95, icon: <Code /> },
   { name: "CSS3 & Tailwind CSS", proficiency: 90, icon: <Palette /> },
-  { name: "JavaScript (ES6+)", proficiency: 92, icon: <Code /> },
-  { name: "TypeScript", proficiency: 88, icon: <Code /> },
   { name: "React & Next.js", proficiency: 90, icon: <Code /> },
-  { name: "Node.js & Express", proficiency: 85, icon: <Cog /> },
   { name: "Python (Flask/Django)", proficiency: 75, icon: <Code /> },
   { name: "C++", proficiency: 80, icon: <Code /> },
   { name: "MongoDB & SQL Databases", proficiency: 80, icon: <Database /> },
