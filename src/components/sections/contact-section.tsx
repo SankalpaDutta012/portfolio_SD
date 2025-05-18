@@ -84,7 +84,7 @@ export function ContactSection() {
             <CardHeader>
               <CardTitle>Contact Me</CardTitle>
               <CardDescription>
-                Have a project in mind or just want to say hi? Fill out the form below.
+                I'm always excited to connect with new people and discuss interesting projects or opportunities. Whether you have a question, a proposal, or just want to say hi, feel free to reach out!
               </CardDescription>
             </CardHeader>
             <CardContent>
