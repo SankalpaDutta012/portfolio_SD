@@ -18,8 +18,8 @@ body {
     --popover: 0 0% 100%; /* White */
     --popover-foreground: 0 0% 12%; /* Charcoal Black */
 
-    --primary: 180 100% 45%; /* Electric Cyan (slightly adjusted for light bg) */
-    --primary-foreground: 0 0% 12%; /* Charcoal Black (for contrast on Cyan) */
+    --primary: 260 73% 65%; /* Neon Purple (Adjusted for light bg) */
+    --primary-foreground: 0 0% 98%; /* Soft White (for contrast on Purple) */
 
     --secondary: 0 0% 85%; /* Light Cool Gray */
     --secondary-foreground: 0 0% 20%; /* Darker Gray */
@@ -27,59 +27,79 @@ body {
     --muted: 0 0% 94%; /* Very Light Gray */
     --muted-foreground: 0 0% 30%; /* Medium Dark Gray */
 
-    --accent: 260 73% 65%; /* Neon Purple (slightly adjusted for light bg) */
-    --accent-foreground: 0 0% 98%; /* Soft White (for contrast on Purple) */
+    --accent: 180 100% 45%; /* Electric Cyan (Adjusted for light bg) */
+    --accent-foreground: 0 0% 12%; /* Charcoal Black (for contrast on Cyan) */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 0 0% 85%; /* Light Cool Gray */
     --input: 0 0% 92%; /* Very Light Gray Input BG */
-    --ring: 180 100% 45%; /* Electric Cyan */
+    --ring: 260 73% 65%; /* Neon Purple */
 
     --radius: 0.5rem;
 
-    --chart-1: 180 100% 45%;  /* Electric Cyan */
-    --chart-2: 260 73% 65%; /* Neon Purple */
+    --chart-1: 260 73% 65%;  /* Neon Purple */
+    --chart-2: 180 100% 45%; /* Electric Cyan */
     --chart-3: 300 70% 60%; /* Magenta/Pink variant */
     --chart-4: 0 0% 60%;   /* Medium-Light Gray */
     --chart-5: 45 90% 50%;  /* Yellow/Orange variant */
+
+    /* Sidebar Light Theme */
+    --sidebar-background: 260 30% 96%; /* Light Lavender */
+    --sidebar-foreground: 0 0% 15%; /* Dark Gray for text */
+    --sidebar-primary: 260 73% 60%; /* Neon Purple - slightly darker for light bg */
+    --sidebar-primary-foreground: 0 0% 98%; /* Soft White */
+    --sidebar-accent: 180 100% 40%; /* Electric Cyan - slightly darker for light bg */
+    --sidebar-accent-foreground: 0 0% 12%; /* Charcoal Black */
+    --sidebar-border: 0 0% 80%; /* Slightly darker border */
+    --sidebar-ring: 260 73% 60%; /* Neon Purple */
   }
 
   .dark {
-    --background: 0 0% 12%; /* Charcoal Black #1E1E1E */
-    --foreground: 0 0% 93%; /* Soft White #EDEDED */
+    --background: 270 30% 10%; /* Deep Dark Purple */
+    --foreground: 260 40% 93%; /* Light Lavender/White for text */
 
-    --card: 0 0% 17%; /* Deep Graphite #2B2B2B */
-    --card-foreground: 0 0% 93%; /* Soft White */
+    --card: 270 25% 15%; /* Slightly lighter dark purple for cards */
+    --card-foreground: 260 40% 93%; /* Light Lavender/White */
 
-    --popover: 0 0% 17%; /* Deep Graphite */
-    --popover-foreground: 0 0% 93%; /* Soft White */
+    --popover: 270 25% 15%; /* Slightly lighter dark purple */
+    --popover-foreground: 260 40% 93%; /* Light Lavender/White */
 
-    --primary: 180 100% 50%; /* Electric Cyan #00FFFF */
-    --primary-foreground: 0 0% 12%; /* Charcoal Black (for contrast on Cyan) */
+    --primary: 300 80% 70%; /* Neon Magenta/Pink */
+    --primary-foreground: 0 0% 10%; /* Dark for contrast */
 
-    --secondary: 0 0% 63%; /* Cool Gray #A0A0A0 */
-    --secondary-foreground: 0 0% 93%; /* Soft White */
+    --secondary: 270 20% 30%; /* Muted Purple */
+    --secondary-foreground: 260 30% 85%; /* Lighter muted text */
 
-    --muted: 0 0% 25%; /* Darker Gray, lighter than card */
-    --muted-foreground: 0 0% 75%; /* Lighter Gray for muted text */
+    --muted: 270 20% 20%; /* Darker Muted Purple */
+    --muted-foreground: 260 25% 70%; /* Lighter Muted text */
 
-    --accent: 260 73% 70%; /* Neon Purple #9F7AEA */
-    --accent-foreground: 0 0% 93%; /* Soft White (for contrast on Purple) */
+    --accent: 180 100% 55%; /* Electric Cyan */
+    --accent-foreground: 0 0% 10%; /* Dark for contrast */
 
     --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 30%; /* Cool Gray derived border, slightly lighter than card */
-    --input: 0 0% 20%; /* Dark input background, similar to Deep Graphite */
-    --ring: 180 100% 50%; /* Electric Cyan for rings */
+    --border: 270 20% 25%; /* Dark Purple Border */
+    --input: 270 25% 18%; /* Dark Purple Input BG */
+    --ring: 180 100% 55%; /* Electric Cyan for rings */
     
-    --chart-1: 180 100% 50%;  /* Electric Cyan */
-    --chart-2: 260 73% 70%; /* Neon Purple */
-    --chart-3: 300 80% 65%; /* Vibrant Pink/Magenta */
+    --chart-1: 300 80% 70%;  /* Neon Magenta/Pink */
+    --chart-2: 180 100% 55%; /* Electric Cyan */
+    --chart-3: 260 73% 70%; /* Neon Purple */
     --chart-4: 0 0% 50%;   /* Medium Gray */
     --chart-5: 45 100% 55%; /* Bright Yellow/Orange */
+
+    /* Sidebar Dark Theme */
+    --sidebar-background: 270 28% 13%; /* Slightly different dark purple */
+    --sidebar-foreground: 260 40% 90%; /* Light Lavender/White */
+    --sidebar-primary: 300 80% 65%; /* Neon Magenta/Pink */
+    --sidebar-primary-foreground: 0 0% 10%; /* Dark */
+    --sidebar-accent: 180 100% 50%; /* Electric Cyan */
+    --sidebar-accent-foreground: 0 0% 10%; /* Dark */
+    --sidebar-border: 270 20% 22%; /* Darker Purple Border */
+    --sidebar-ring: 180 100% 50%; /* Electric Cyan */
   }
 }
 
