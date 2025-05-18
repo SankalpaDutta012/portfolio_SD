@@ -2,7 +2,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { GraduationCap, School, ArrowDownCircle } from "lucide-react";
+import { GraduationCap, School, Briefcase, ArrowDownCircle } from "lucide-react"; // Added Briefcase
 import type { ReactElement } from "react";
 
 interface JourneyItem {
@@ -16,6 +16,22 @@ interface JourneyItem {
 
 const journeyData: JourneyItem[] = [
   {
+    id: "ai-intern",
+    date: "Mar 2025 – Present",
+    title: "AI Intern – Health Chatbot Development",
+    institution: "Calcutta University",
+    description: "Building an AI-powered health chatbot to translate medical conversations between English and Bengali. Developing NLP models to ensure accurate and context-aware sentence translation, aiming to bridge the language gap between doctors and patients for better healthcare communication.",
+    icon: <Briefcase className="h-6 w-6 text-primary" />,
+  },
+  {
+    id: "smart-traffic-intern",
+    date: "Jun 2024 – Aug 2024",
+    title: "Intern – Smart Traffic Optimization System",
+    institution: "IEDC Lab , UENK",
+    description: "Worked on designing and developing a smart traffic optimization system using real-time data analysis and ML models to improve urban traffic flow.",
+    icon: <Briefcase className="h-6 w-6 text-primary" />,
+  },
+  {
     id: "bachelor",
     date: "2022 - Present",
     title: "Bachelor of Technology - Computer Science & Engineering(IoT, Cybersecurity, Blockchain Technology)",
@@ -23,14 +39,6 @@ const journeyData: JourneyItem[] = [
     description: "Focusing on advanced concepts in Artificial Intelligence,Machine Learning, IoT, Cybersecurity, Blockchain Technology.",
     icon: <GraduationCap className="h-6 w-6 text-primary" />,
   },
-  // {
-  //   id: "bachelor",
-  //   date: "2019 - 2023",
-  //   title: "Bachelor of Technology - Computer Science & Engineering",
-  //   institution: "University of Engineering and Management, Kolkata",
-  //   description: "CGPA: 9.25. Gained a strong foundation in software development, algorithms, and data structures.",
-  //   icon: <GraduationCap className="h-6 w-6 text-primary" />,
-  // },
   {
     id: "higher-secondary",
     date: "2020 - 2022",
@@ -143,3 +151,4 @@ export function JourneySection() {
     </motion.section>
   );
 }
+
