@@ -9,77 +9,77 @@ body {
 
 @layer base {
   :root {
-    --background: 270 60% 98%; /* Very Light Lavender/White */
-    --foreground: 270 30% 20%; /* Dark Purple/Gray for text */
+    --background: 0 0% 98%; /* Soft White - Light Mode Base */
+    --foreground: 0 0% 12%; /* Charcoal Black - Light Mode Text */
 
-    --card: 270 50% 95%; /* Light Lavender for cards */
-    --card-foreground: 270 30% 20%;
+    --card: 0 0% 100%; /* White - Light Mode Cards */
+    --card-foreground: 0 0% 12%; /* Charcoal Black */
 
-    --popover: 270 60% 98%;
-    --popover-foreground: 270 30% 20%;
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 0 0% 12%; /* Charcoal Black */
 
-    --primary: 320 85% 55%; /* Neon Pink/Magenta */
-    --primary-foreground: 0 0% 100%; /* White */
+    --primary: 180 100% 45%; /* Electric Cyan (slightly adjusted for light bg) */
+    --primary-foreground: 0 0% 12%; /* Charcoal Black (for contrast on Cyan) */
 
-    --secondary: 270 40% 90%; /* Lighter muted purple */
-    --secondary-foreground: 270 25% 30%; /* Darker text on secondary */
+    --secondary: 0 0% 85%; /* Light Cool Gray */
+    --secondary-foreground: 0 0% 20%; /* Darker Gray */
 
-    --muted: 270 40% 90%;
-    --muted-foreground: 270 20% 45%; /* Muted text */
+    --muted: 0 0% 94%; /* Very Light Gray */
+    --muted-foreground: 0 0% 30%; /* Medium Dark Gray */
 
-    --accent: 190 85% 55%; /* Neon Cyan/Blue */
-    --accent-foreground: 270 10% 10%; /* Dark text for neon accent */
+    --accent: 260 73% 65%; /* Neon Purple (slightly adjusted for light bg) */
+    --accent-foreground: 0 0% 98%; /* Soft White (for contrast on Purple) */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 270 30% 85%; /* Light purple border */
-    --input: 270 40% 92%; /* Light purple input background */
-    --ring: 320 85% 58%; /* Primary neon color for rings */
+    --border: 0 0% 85%; /* Light Cool Gray */
+    --input: 0 0% 92%; /* Very Light Gray Input BG */
+    --ring: 180 100% 45%; /* Electric Cyan */
 
     --radius: 0.5rem;
 
-    --chart-1: 320 90% 60%;   /* Neon Pink/Magenta */
-    --chart-2: 190 90% 60%;  /* Neon Cyan/Blue */
-    --chart-3: 280 80% 65%;  /* Neon Purple (complementary) */
-    --chart-4: 270 20% 60%;    /* Muted Purple for contrast */
-    --chart-5: 45 90% 55%;   /* Neon Yellow/Orange (contrasting accent) */
+    --chart-1: 180 100% 45%;  /* Electric Cyan */
+    --chart-2: 260 73% 65%; /* Neon Purple */
+    --chart-3: 300 70% 60%; /* Magenta/Pink variant */
+    --chart-4: 0 0% 60%;   /* Medium-Light Gray */
+    --chart-5: 45 90% 50%;  /* Yellow/Orange variant */
   }
 
   .dark {
-    --background: 270 30% 10%; /* Dark Purple */
-    --foreground: 270 40% 90%; /* Light Lavender/Off-white */
+    --background: 0 0% 12%; /* Charcoal Black #1E1E1E */
+    --foreground: 0 0% 93%; /* Soft White #EDEDED */
 
-    --card: 270 25% 15%; /* Slightly lighter dark purple for cards */
-    --card-foreground: 270 40% 90%;
+    --card: 0 0% 17%; /* Deep Graphite #2B2B2B */
+    --card-foreground: 0 0% 93%; /* Soft White */
 
-    --popover: 270 30% 8%; /* Even darker purple for popovers */
-    --popover-foreground: 270 40% 90%;
+    --popover: 0 0% 17%; /* Deep Graphite */
+    --popover-foreground: 0 0% 93%; /* Soft White */
 
-    --primary: 320 90% 60%; /* Neon Pink/Magenta - vibrant */
-    --primary-foreground: 270 10% 10%; /* Very dark text for neon primary */
+    --primary: 180 100% 50%; /* Electric Cyan #00FFFF */
+    --primary-foreground: 0 0% 12%; /* Charcoal Black (for contrast on Cyan) */
 
-    --secondary: 270 20% 20%; /* Darker muted purple elements */
-    --secondary-foreground: 270 30% 70%; /* Muted text on secondary */
+    --secondary: 0 0% 63%; /* Cool Gray #A0A0A0 */
+    --secondary-foreground: 0 0% 93%; /* Soft White */
 
-    --muted: 270 20% 20%;
-    --muted-foreground: 270 25% 55%; /* More muted text */
+    --muted: 0 0% 25%; /* Darker Gray, lighter than card */
+    --muted-foreground: 0 0% 75%; /* Lighter Gray for muted text */
 
-    --accent: 190 90% 60%; /* Neon Cyan/Blue - vibrant */
-    --accent-foreground: 270 5% 5%; /* Very dark text for neon accent on dark mode */
+    --accent: 260 73% 70%; /* Neon Purple #9F7AEA */
+    --accent-foreground: 0 0% 93%; /* Soft White (for contrast on Purple) */
 
     --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 270 20% 25%; /* Subtle dark purple border */
-    --input: 270 20% 22%; /* Dark purple input background */
-    --ring: 320 90% 65%; /* Primary neon color for rings in dark */
+    --border: 0 0% 30%; /* Cool Gray derived border, slightly lighter than card */
+    --input: 0 0% 20%; /* Dark input background, similar to Deep Graphite */
+    --ring: 180 100% 50%; /* Electric Cyan for rings */
     
-    --chart-1: 320 85% 58%;   /* Neon Pink/Magenta */
-    --chart-2: 190 85% 58%;  /* Neon Cyan/Blue */
-    --chart-3: 280 75% 62%;  /* Neon Purple */
-    --chart-4: 270 30% 70%;    /* Light Muted Purple/Gray */
-    --chart-5: 50 90% 58%;   /* Neon Yellow (contrasting accent) */
+    --chart-1: 180 100% 50%;  /* Electric Cyan */
+    --chart-2: 260 73% 70%; /* Neon Purple */
+    --chart-3: 300 80% 65%; /* Vibrant Pink/Magenta */
+    --chart-4: 0 0% 50%;   /* Medium Gray */
+    --chart-5: 45 100% 55%; /* Bright Yellow/Orange */
   }
 }
 
