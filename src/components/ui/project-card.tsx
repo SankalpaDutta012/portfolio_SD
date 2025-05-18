@@ -35,8 +35,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
         />
       </div>
       <CardHeader>
-        <CardTitle>{project.title}</CardTitle>
-        <CardDescription className="h-20 overflow-hidden text-ellipsis">
+        <CardTitle className="text-xl md:text-2xl">{project.title}</CardTitle>
+        <CardDescription className="h-20 overflow-hidden text-ellipsis text-sm">
           {project.description}
         </CardDescription>
       </CardHeader>

@@ -99,7 +99,7 @@ export function AboutSection() {
               <CardHeader>
                 <CardTitle className="text-2xl text-center md:text-left">A Glimpse Into My World</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6 text-lg text-muted-foreground flex-grow">
+              <CardContent className="space-y-6 text-base md:text-lg text-muted-foreground flex-grow">
                 <p>
                   Hello! I'm Sankalpa, a dedicated Full-Stack Developer with a knack for building robust and user-friendly applications. My journey in tech is driven by a constant curiosity and a desire to solve real-world problems through innovative solutions.
                 </p>
@@ -147,7 +147,7 @@ export function AboutSection() {
                 >
                   <Card className="shadow-md h-full">
                     <CardHeader className="pb-2">
-                      <CardTitle className="flex items-center justify-between text-xl">
+                      <CardTitle className="flex items-center justify-between text-lg md:text-xl">
                         <span className="flex items-center">
                           {React.cloneElement(skill.icon, { className: "mr-3 h-6 w-6 text-primary"})}
                           {skill.name}

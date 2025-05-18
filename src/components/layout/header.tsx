@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 max-w-screen-2xl items-center">
+      <div className="container flex min-h-14 py-2 sm:py-0 max-w-screen-2xl items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className="h-6 w-6 fill-primary">
             <rect width="256" height="256" fill="none"></rect>
@@ -14,11 +14,11 @@ export function Header() {
           </svg>
           <span className="font-bold">Sankalpa's Space</span>
         </Link>
-        <nav className="flex flex-1 items-center space-x-2 md:space-x-4 text-sm md:text-base">
+        <nav className="flex flex-1 flex-wrap items-center gap-x-3 gap-y-1.5 text-sm md:text-base">
           <Button variant="link" asChild><Link href="#about-skills">About & Skills</Link></Button>
           <Button variant="link" asChild><Link href="#projects">Projects</Link></Button>
-          <Button variant="link" asChild><Link href="#field-of-interest">Field of Interest</Link></Button> 
-          <Button variant="link" asChild><Link href="#journey">My Journey</Link></Button> {/* Added */}
+          <Button variant="link" asChild><Link href="#field-of-interest">Field of Interest</Link></Button>
+          <Button variant="link" asChild><Link href="#journey">My Journey</Link></Button>
           <Button variant="link" asChild><Link href="#achievements">Achievements</Link></Button>
           <Button variant="link" asChild><Link href="#contact">Contact</Link></Button>
         </nav>

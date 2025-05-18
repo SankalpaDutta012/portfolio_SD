@@ -140,7 +140,7 @@ export function ContactSection() {
               transition={{ type: 'spring', stiffness: 300 }}
               className="text-foreground/70 hover:text-primary"
             >
-              <Mail size={32} strokeWidth={1.5} />
+              <Mail size={28} className="sm:size-8" strokeWidth={1.5} />
             </motion.a>
             <motion.a
               href="https://www.linkedin.com/in/sankalpa-dutta-09187525b"
@@ -151,7 +151,7 @@ export function ContactSection() {
               transition={{ type: 'spring', stiffness: 300 }}
               className="text-foreground/70 hover:text-primary"
             >
-              <Linkedin size={32} strokeWidth={1.5} />
+              <Linkedin size={28} className="sm:size-8" strokeWidth={1.5} />
             </motion.a>
             <motion.a
               href="https://github.com/SankalpaDutta012"
@@ -162,7 +162,7 @@ export function ContactSection() {
               transition={{ type: 'spring', stiffness: 300 }}
               className="text-foreground/70 hover:text-primary"
             >
-              <Github size={32} strokeWidth={1.5} />
+              <Github size={28} className="sm:size-8" strokeWidth={1.5} />
             </motion.a>
           </div>
 
