@@ -27,7 +27,7 @@ const journeyData: JourneyItem[] = [
     id: "smart-traffic-intern",
     date: "Jun 2024 – Aug 2024",
     title: "Intern – Smart Traffic Optimization System",
-    institution: "IEDC Lab , UENK",
+    institution: "IEDC Lab , UEMK",
     description: "Worked on designing and developing a smart traffic optimization system using real-time data analysis and ML models to improve urban traffic flow.",
     icon: <Briefcase className="h-6 w-6 text-primary" />,
   },
@@ -151,4 +151,3 @@ export function JourneySection() {
     </motion.section>
   );
 }
-
