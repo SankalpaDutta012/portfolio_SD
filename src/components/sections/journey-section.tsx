@@ -1,5 +1,5 @@
-
 'use client';
+
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { GraduationCap, School, Briefcase, Building2, ArrowDownCircle } from "lucide-react";
@@ -73,7 +73,7 @@ const cardItemVariants = {
 
 interface JourneyCardProps {
   item: JourneyItem;
-  isLeftAlignedOnDesktop: boolean; 
+  isLeftAlignedOnDesktop: boolean;
 }
 
 const JourneyCard: React.FC<JourneyCardProps> = ({ item, isLeftAlignedOnDesktop }) => {
@@ -84,7 +84,7 @@ const JourneyCard: React.FC<JourneyCardProps> = ({ item, isLeftAlignedOnDesktop 
         <div className="absolute top-4 right-4">
           {item.mainIcon}
         </div>
-        <CardTitle className={`text-xl lg:text-2xl font-bold text-accent mb-1 mr-12`}> {/* Removed alignment class here, handled by parent */}
+        <CardTitle className={`text-xl lg:text-2xl font-bold text-accent mb-1 mr-12`}>
           {item.title}
         </CardTitle>
         <div className={`flex items-center text-sm text-muted-foreground mt-1 ${isLeftAlignedOnDesktop ? 'md:justify-end' : 'md:justify-start'}`}>
@@ -93,7 +93,7 @@ const JourneyCard: React.FC<JourneyCardProps> = ({ item, isLeftAlignedOnDesktop 
         </div>
         <div className={`text-xs text-muted-foreground/80`}>{item.date}</div>
       </CardHeader>
-      <CardContent className={`text-sm text-muted-foreground pt-2`}>
+      <CardContent className="text-sm text-muted-foreground pt-2">
         {Array.isArray(item.description) ? (
           <ul className={`space-y-1 ${isLeftAlignedOnDesktop ? 'md:list-none' : 'list-disc pl-4'}`}>
             {item.description.map((desc, i) => (
@@ -127,85 +127,85 @@ export function JourneySection() {
           <div className="absolute top-0 bottom-0 left-3 w-0.5 bg-border/70 md:hidden"></div>
 
           <div className="space-y-10 md:space-y-0">
-            {journeyData.map((item, index) => (
-              <motion.div
-                key={item.id}
-                className={`relative md:grid md:grid-cols-[1fr_auto_1fr] md:gap-x-6 items-start 
-                            ${index > 0 ? 'md:mt-10' : ''}`}
-              >
-                {/* Mobile: Dot positioned relative to the left line */}
-                <div className="md:hidden absolute left-[0.62rem] top-1.5 h-4 w-4 rounded-full bg-primary border-2 border-background z-10"></div>
-                
-                {/* Content Left (for odd items on desktop) */}
-                {index % 2 !== 0 ? (
-                  <motion.div 
-                    className="md:col-start-1 md:text-right"
-                    custom={true} // isLeft
-                    variants={cardItemVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.3 }}
-                  >
-                    <JourneyCard item={item} isLeftAlignedOnDesktop={true} />
-                  </motion.div>
-                ) : (
-                  <div className="hidden md:block md:col-start-1"></div> // Spacer
-                )}
+            {journeyData.map((item, index) => {
+              const isLeft = index % 2 !== 0;
 
-                {/* Desktop: Timeline Dot in the center column */}
-                <div className="hidden md:flex md:col-start-2 justify-center relative h-full">
-                  <div className="absolute top-1.5 h-5 w-5 rounded-full bg-primary border-4 border-background z-10"></div>
-                </div>
-                
-                {/* Content Right (for even items on desktop) */}
-                {index % 2 === 0 ? (
-                  <motion.div 
-                    className="md:col-start-3 md:text-left"
-                    custom={false} // !isLeft
-                    variants={cardItemVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.3 }}
-                  >
-                    <JourneyCard item={item} isLeftAlignedOnDesktop={false} />
-                  </motion.div>
-                ) : (
-                  <div className="hidden md:block md:col-start-3"></div> // Spacer
-                )}
+              return (
+                <motion.div
+                  key={item.id}
+                  className={`relative md:grid md:grid-cols-[1fr_auto_1fr] md:gap-x-6 items-start ${index > 0 ? 'md:mt-10' : ''}`}
+                >
+                  {/* Mobile: Timeline Dot */}
+                  <div className="md:hidden absolute left-[0.62rem] top-1.5 h-4 w-4 rounded-full bg-primary border-2 border-background z-10"></div>
 
-                {/* Mobile: Content area, pushed past the dot/line */}
-                <div className="ml-10 md:hidden">
-                   <motion.div
-                    custom={false} // Mobile is always effectively "right" aligned content relative to line
-                    variants={cardItemVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.3 }}
-                  >
-                    <JourneyCard item={item} isLeftAlignedOnDesktop={false} />
-                   </motion.div>
-                </div>
-              </motion.div>
-            ))}
+                  {/* Desktop: Left Content or Spacer */}
+                  {isLeft ? (
+                    <motion.div
+                      className="hidden md:block md:col-start-1 md:text-right"
+                      custom={true}
+                      variants={cardItemVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, amount: 0.3 }}
+                    >
+                      <JourneyCard item={item} isLeftAlignedOnDesktop={true} />
+                    </motion.div>
+                  ) : (
+                    <div className="hidden md:block md:col-start-1" />
+                  )}
+
+                  {/* Desktop: Timeline Dot */}
+                  <div className="hidden md:flex md:col-start-2 justify-center relative h-full">
+                    <div className="absolute top-1.5 h-5 w-5 rounded-full bg-primary border-4 border-background z-10"></div>
+                  </div>
+
+                  {/* Desktop: Right Content or Spacer */}
+                  {!isLeft ? (
+                    <motion.div
+                      className="hidden md:block md:col-start-3 md:text-left"
+                      custom={false}
+                      variants={cardItemVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, amount: 0.3 }}
+                    >
+                      <JourneyCard item={item} isLeftAlignedOnDesktop={false} />
+                    </motion.div>
+                  ) : (
+                    <div className="hidden md:block md:col-start-3" />
+                  )}
+
+                  {/* Mobile: Render JourneyCard once per item */}
+                  <div className="ml-10 md:hidden">
+                    <motion.div
+                      custom={false}
+                      variants={cardItemVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, amount: 0.3 }}
+                    >
+                      <JourneyCard item={item} isLeftAlignedOnDesktop={false} />
+                    </motion.div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>
+
       <motion.a
         href="#achievements"
         aria-label="Scroll to achievements section"
         className="absolute bottom-10 right-10 z-20 text-primary hover:text-accent transition-colors"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.5, ease: "easeInOut" }} 
+        transition={{ delay: 0.5, duration: 0.5, ease: "easeInOut" }}
         whileHover={{ scale: 1.1 }}
       >
         <motion.div
-          animate={{ y: [0, -8, 0] }} 
-          transition={{
-            duration: 1.5,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
         >
           <ArrowDownCircle size={40} strokeWidth={1.5} />
         </motion.div>
@@ -213,4 +213,3 @@ export function JourneySection() {
     </motion.section>
   );
 }
-
