@@ -135,6 +135,11 @@ export function HomeSection() {
             </Link>
           </Button>
           <Button size="lg" variant="outline" asChild>
+            <Link href="#journey">
+              My Journey
+            </Link>
+          </Button>
+          <Button size="lg" variant="outline" asChild>
             <Link href="#contact">
               Contact Me
             </Link>
