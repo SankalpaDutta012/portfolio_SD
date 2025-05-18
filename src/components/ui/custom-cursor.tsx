@@ -35,7 +35,7 @@ const CustomCursor: React.FC = () => {
       if (
         target.tagName.toLowerCase() === 'a' ||
         target.tagName.toLowerCase() === 'button' ||
-        target.closest('a, button, [role="button"], .clickable-element') // Added .clickable-element
+        target.closest('a, button, [role="button"], .clickable-element') 
       ) {
         setCursorVariant('link');
       } else if (
@@ -60,11 +60,8 @@ const CustomCursor: React.FC = () => {
     }
 
     document.addEventListener('mouseover', handleMouseOver);
-    // For elements that might not trigger mouseover on children, listen to mouseout on document
     document.addEventListener('mouseout', handleMouseOut);
 
-
-    // Add specific listeners for links and buttons to ensure hover state is captured
     const interactiveElements = document.querySelectorAll('a, button, [role="button"], input[type="submit"], input[type="button"], .clickable-element');
     
     const onLinkHover = () => setCursorVariant('link');
@@ -74,7 +71,6 @@ const CustomCursor: React.FC = () => {
       el.addEventListener('mouseenter', onLinkHover);
       el.addEventListener('mouseleave', onDefault);
     });
-
 
     return () => {
       document.removeEventListener('mouseover', handleMouseOver);
@@ -88,7 +84,6 @@ const CustomCursor: React.FC = () => {
 
   const springConfig = { damping: 28, stiffness: 400, mass: 0.3 };
   const innerSpringConfig = { damping: 30, stiffness: 600, mass: 0.2 };
-
 
   const smoothMouseOuter = {
     x: useSpring(mousePosition.x, springConfig),
@@ -109,63 +104,65 @@ const CustomCursor: React.FC = () => {
     }
   }, [mousePosition, smoothMouseOuter.x, smoothMouseOuter.y, smoothMouseInner.x, smoothMouseInner.y, isClient]);
 
-
   if (!isClient) {
     return null; // Don't render on server
   }
 
   const variantsOuter = {
     default: {
-      width: 32,
-      height: 32,
-      borderWidth: '2px',
-      backgroundColor: 'hsla(var(--primary-foreground) / 0)',
-      borderColor: 'hsl(var(--primary))',
+      width: 24,
+      height: 24,
+      borderWidth: '1px',
+      borderColor: 'hsla(var(--accent) / 0.3)', // Faint accent color for halo
+      backgroundColor: 'transparent',
       opacity: 0.7,
       x: '-50%', 
       y: '-50%',
     },
     link: {
-      width: 48,
-      height: 48,
-      borderWidth: '2px',
-      backgroundColor: 'hsla(var(--primary) / 0.15)',
-      borderColor: 'hsl(var(--primary))',
+      width: 36,
+      height: 36,
+      borderWidth: '1px',
+      borderColor: 'hsla(var(--accent) / 0.7)', // More visible halo
+      backgroundColor: 'hsla(var(--accent) / 0.1)',
       opacity: 1,
       x: '-50%',
       y: '-50%',
     },
-    text: {
-      width: 2, // ibeam width
-      height: 24, // ibeam height
-      borderRadius: '1px',
+    text: { // I-beam for text input
+      width: 2, 
+      height: 20, 
+      borderRadius: '0px',
       borderWidth: '0px',
-      backgroundColor: 'hsl(var(--primary))',
-      borderColor: 'hsl(var(--primary))',
+      backgroundColor: 'hsl(var(--foreground))', // Standard text cursor color
       opacity: 1,
-      x: '-50%',
+      x: '-50%', 
       y: '-50%',
     },
   };
 
-  const variantsInner = {
+  const variantsInner = { // The "laser" dot
     default: {
-      width: 8,
-      height: 8,
-      backgroundColor: 'hsl(var(--primary))',
+      width: 6,
+      height: 6,
+      backgroundColor: 'hsl(var(--accent))',
+      borderRadius: '50%',
       opacity: 1,
       x: '-50%',
       y: '-50%',
+      boxShadow: '0 0 6px hsl(var(--accent)), 0 0 10px hsl(var(--accent))', // Glow effect
     },
     link: {
-      width: 0, // Hide inner dot when hovering link, outer provides feedback
-      height: 0,
-      opacity: 0,
-      backgroundColor: 'hsl(var(--primary-foreground))',
+      width: 8, // Slightly larger dot for links
+      height: 8,
+      opacity: 1,
+      backgroundColor: 'hsl(var(--accent))',
+      borderRadius: '50%',
       x: '-50%',
       y: '-50%',
+      boxShadow: '0 0 8px hsl(var(--accent)), 0 0 12px hsl(var(--accent))', // More intense glow
     },
-    text: { // Hide inner dot for text variant too
+    text: { // Hide laser dot when I-beam is shown
       width: 0,
       height: 0,
       opacity: 0,
@@ -174,7 +171,7 @@ const CustomCursor: React.FC = () => {
 
   return (
     <>
-      {/* Outer Cursor */}
+      {/* Outer Halo/Feedback */}
       <motion.div
         className="pointer-events-none fixed left-0 top-0 z-[9999] rounded-full"
         style={{
@@ -183,9 +180,9 @@ const CustomCursor: React.FC = () => {
         }}
         variants={variantsOuter}
         animate={cursorVariant}
-        transition={springConfig}
+        transition={{ ...springConfig, x: { ...springConfig }, y: { ...springConfig } }}
       />
-      {/* Inner Cursor Dot */}
+      {/* Inner Laser Dot */}
       <motion.div
         className="pointer-events-none fixed left-0 top-0 z-[9999] rounded-full"
         style={{
@@ -194,7 +191,7 @@ const CustomCursor: React.FC = () => {
         }}
         variants={variantsInner}
         animate={cursorVariant}
-        transition={innerSpringConfig}
+        transition={{ ...innerSpringConfig, x: { ...innerSpringConfig }, y: { ...innerSpringConfig } }}
       />
     </>
   );
