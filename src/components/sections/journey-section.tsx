@@ -19,7 +19,7 @@ const journeyData: JourneyItem[] = [
     id: "ai-intern",
     date: "Mar 2025 – Present",
     title: "AI Intern – Health Chatbot Development",
-    institution: "Calcutta University",
+    institution: "University of Calcutta",
     description: "Building an AI-powered health chatbot to translate medical conversations between English and Bengali. Developing NLP models to ensure accurate and context-aware sentence translation, aiming to bridge the language gap between doctors and patients for better healthcare communication.",
     icon: <Briefcase className="h-6 w-6 text-primary" />,
   },
