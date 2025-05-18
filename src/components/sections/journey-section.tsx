@@ -1,8 +1,8 @@
 
-"use client";
+'use client';
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { GraduationCap, School, Briefcase, ArrowDownCircle } from "lucide-react"; // Added Briefcase
+import { GraduationCap, School, Briefcase, Building2, ArrowDownCircle } from "lucide-react";
 import type { ReactElement } from "react";
 
 interface JourneyItem {
@@ -10,8 +10,8 @@ interface JourneyItem {
   date: string;
   title: string;
   institution: string;
-  description?: string;
-  icon?: ReactElement;
+  description: string | string[];
+  mainIcon: ReactElement;
 }
 
 const journeyData: JourneyItem[] = [
@@ -20,8 +20,12 @@ const journeyData: JourneyItem[] = [
     date: "Mar 2025 – Present",
     title: "AI Intern – Health Chatbot Development",
     institution: "University of Calcutta",
-    description: "Building an AI-powered health chatbot to translate medical conversations between English and Bengali. Developing NLP models to ensure accurate and context-aware sentence translation, aiming to bridge the language gap between doctors and patients for better healthcare communication.",
-    icon: <Briefcase className="h-6 w-6 text-primary" />,
+    description: [
+      "Building an AI-powered health chatbot to translate medical conversations between English and Bengali.",
+      "Developing NLP models to ensure accurate and context-aware sentence translation.",
+      "Aiming to bridge the language gap between doctors and patients for better healthcare communication."
+    ],
+    mainIcon: <Briefcase size={26} className="text-primary/80" />,
   },
   {
     id: "smart-traffic-intern",
@@ -29,15 +33,15 @@ const journeyData: JourneyItem[] = [
     title: "Intern – Smart Traffic Optimization System",
     institution: "IEDC Lab , UEMK",
     description: "Worked on designing and developing a smart traffic optimization system using real-time data analysis and ML models to improve urban traffic flow.",
-    icon: <Briefcase className="h-6 w-6 text-primary" />,
+    mainIcon: <Briefcase size={26} className="text-primary/80" />,
   },
   {
     id: "bachelor",
-    date: "2022 - Present",
-    title: "Bachelor of Technology - Computer Science & Engineering(IoT, Cybersecurity, Blockchain Technology)",
+    date: "Aug 2022 - Jul 2026 (Expected)",
+    title: "Bachelor of Technology - CSE (IoT, Cybersecurity, Blockchain)",
     institution: "University of Engineering and Management, Kolkata",
-    description: "Focusing on advanced concepts in Artificial Intelligence,Machine Learning, IoT, Cybersecurity, Blockchain Technology.",
-    icon: <GraduationCap className="h-6 w-6 text-primary" />,
+    description: "Pursuing B.Tech in CSE with a focus on full-stack development and AI. Active in coding competitions and tech communities.",
+    mainIcon: <GraduationCap size={26} className="text-primary/80" />,
   },
   {
     id: "higher-secondary",
@@ -45,7 +49,7 @@ const journeyData: JourneyItem[] = [
     title: "Higher Secondary Education (WBHSCE Board)",
     institution: "Barrackpore Government High School, Barrackpore",
     description: "Completed with a focus on Science, achieving 82%.",
-    icon: <School className="h-6 w-6 text-primary" />,
+    mainIcon: <School size={26} className="text-primary/80" />,
   },
   {
     id: "secondary",
@@ -53,7 +57,7 @@ const journeyData: JourneyItem[] = [
     title: "Secondary Education (WBBSE Board)",
     institution: "Ramkrishna Vivekananda Mission Bidyabhavan, Barrackpore",
     description: "Completed with 88%.",
-    icon: <School className="h-6 w-6 text-primary" />,
+    mainIcon: <School size={26} className="text-primary/80" />,
   },
 ];
 
@@ -62,70 +66,128 @@ const sectionVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-const timelineItemVariants = {
-  hidden: { opacity: 0, x: -50 },
-  visible: (i: number) => ({
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay: i * 0.2,
-      duration: 0.5,
-    },
-  }),
+const cardItemVariants = {
+  hidden: (isLeft: boolean) => ({ opacity: 0, x: isLeft ? -40 : 40 }),
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
+interface JourneyCardProps {
+  item: JourneyItem;
+  isLeftAlignedOnDesktop: boolean; 
+}
+
+const JourneyCard: React.FC<JourneyCardProps> = ({ item, isLeftAlignedOnDesktop }) => {
+  return (
+    <Card className={`shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card/80 backdrop-blur-sm border-border/50 w-full
+                    ${isLeftAlignedOnDesktop ? 'md:text-right' : 'md:text-left'}`}>
+      <CardHeader className="pb-3 relative">
+        <div className="absolute top-4 right-4">
+          {item.mainIcon}
+        </div>
+        <CardTitle className={`text-xl lg:text-2xl font-bold text-accent mb-1 mr-12`}> {/* Removed alignment class here, handled by parent */}
+          {item.title}
+        </CardTitle>
+        <div className={`flex items-center text-sm text-muted-foreground mt-1 ${isLeftAlignedOnDesktop ? 'md:justify-end' : 'md:justify-start'}`}>
+          <Building2 size={14} className="mr-2 shrink-0" />
+          <span className="font-medium">{item.institution}</span>
+        </div>
+        <div className={`text-xs text-muted-foreground/80`}>{item.date}</div>
+      </CardHeader>
+      <CardContent className={`text-sm text-muted-foreground pt-2`}>
+        {Array.isArray(item.description) ? (
+          <ul className={`space-y-1 ${isLeftAlignedOnDesktop ? 'md:list-none' : 'list-disc pl-4'}`}>
+            {item.description.map((desc, i) => (
+              <li key={i} className={`${isLeftAlignedOnDesktop ? 'md:text-right' : 'md:text-left'}`}>{desc}</li>
+            ))}
+          </ul>
+        ) : (
+          <p>{item.description}</p>
+        )}
+      </CardContent>
+    </Card>
+  );
 };
 
 export function JourneySection() {
   return (
     <motion.section
       id="journey"
-      className="relative section-padding bg-background" // Changed to bg-background for contrast with other sections
+      className="relative section-padding bg-background"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.1 }}
+      viewport={{ once: true, amount: 0.05 }}
     >
       <div className="container">
         <h2 className="section-title">My Journey</h2>
-        <div className="relative max-w-3xl mx-auto pl-6">
-          {/* Timeline Line */}
-          <div className="absolute left-0 top-0 bottom-0 w-1 bg-border rounded-full md:left-1/2 md:-translate-x-1/2"></div>
+        <div className="relative max-w-4xl mx-auto">
+          {/* Central timeline bar for Desktop */}
+          <div className="hidden md:block absolute top-0 bottom-0 left-1/2 w-0.5 bg-border/70 -translate-x-1/2"></div>
+          {/* Left timeline bar for Mobile */}
+          <div className="absolute top-0 bottom-0 left-3 w-0.5 bg-border/70 md:hidden"></div>
 
-          {journeyData.map((item, index) => (
-            <motion.div
-              key={item.id}
-              custom={index}
-              variants={timelineItemVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              className="mb-12 pl-8 md:pl-0"
-            >
-              <div className="relative md:flex md:items-start group">
-                {/* Dot on Timeline */}
-                <div className="absolute -left-[38px] top-1 h-4 w-4 rounded-full border-2 border-primary bg-background group-hover:bg-primary transition-colors duration-300 md:left-1/2 md:-translate-x-1/2 md:-translate-y-0"></div>
+          <div className="space-y-10 md:space-y-0">
+            {journeyData.map((item, index) => (
+              <motion.div
+                key={item.id}
+                className={`relative md:grid md:grid-cols-[1fr_auto_1fr] md:gap-x-6 items-start 
+                            ${index > 0 ? 'md:mt-10' : ''}`}
+              >
+                {/* Mobile: Dot positioned relative to the left line */}
+                <div className="md:hidden absolute left-[0.62rem] top-1.5 h-4 w-4 rounded-full bg-primary border-2 border-background z-10"></div>
                 
-                <div className="md:w-1/2 md:pr-8 md:group-odd:order-2 md:group-odd:pl-8 md:group-odd:text-left md:group-even:text-right">
-                  <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <CardHeader className="pb-3">
-                      <div className="flex items-center mb-1 md:group-even:justify-end">
-                        {item.icon}
-                        <span className="ml-2 text-sm font-semibold text-muted-foreground">{item.date}</span>
-                      </div>
-                      <CardTitle className="text-xl">{item.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="font-medium text-foreground">{item.institution}</p>
-                      {item.description && (
-                        <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
-                      )}
-                    </CardContent>
-                  </Card>
+                {/* Content Left (for odd items on desktop) */}
+                {index % 2 !== 0 ? (
+                  <motion.div 
+                    className="md:col-start-1 md:text-right"
+                    custom={true} // isLeft
+                    variants={cardItemVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                  >
+                    <JourneyCard item={item} isLeftAlignedOnDesktop={true} />
+                  </motion.div>
+                ) : (
+                  <div className="hidden md:block md:col-start-1"></div> // Spacer
+                )}
+
+                {/* Desktop: Timeline Dot in the center column */}
+                <div className="hidden md:flex md:col-start-2 justify-center relative h-full">
+                  <div className="absolute top-1.5 h-5 w-5 rounded-full bg-primary border-4 border-background z-10"></div>
                 </div>
-                 {/* Empty div for spacing on the other side of timeline for md+ screens */}
-                <div className="hidden md:block md:w-1/2"></div>
-              </div>
-            </motion.div>
-          ))}
+                
+                {/* Content Right (for even items on desktop) */}
+                {index % 2 === 0 ? (
+                  <motion.div 
+                    className="md:col-start-3 md:text-left"
+                    custom={false} // !isLeft
+                    variants={cardItemVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                  >
+                    <JourneyCard item={item} isLeftAlignedOnDesktop={false} />
+                  </motion.div>
+                ) : (
+                  <div className="hidden md:block md:col-start-3"></div> // Spacer
+                )}
+
+                {/* Mobile: Content area, pushed past the dot/line */}
+                <div className="ml-10 md:hidden">
+                   <motion.div
+                    custom={false} // Mobile is always effectively "right" aligned content relative to line
+                    variants={cardItemVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                  >
+                    <JourneyCard item={item} isLeftAlignedOnDesktop={false} />
+                   </motion.div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
       <motion.a
@@ -134,11 +196,11 @@ export function JourneySection() {
         className="absolute bottom-10 right-10 z-20 text-primary hover:text-accent transition-colors"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 0.5, ease: "easeInOut" }} // Increased delay
+        transition={{ delay: 0.5, duration: 0.5, ease: "easeInOut" }} 
         whileHover={{ scale: 1.1 }}
       >
         <motion.div
-          animate={{ y: [0, -8, 0] }}
+          animate={{ y: [0, -8, 0] }} 
           transition={{
             duration: 1.5,
             repeat: Infinity,
@@ -151,3 +213,4 @@ export function JourneySection() {
     </motion.section>
   );
 }
+
