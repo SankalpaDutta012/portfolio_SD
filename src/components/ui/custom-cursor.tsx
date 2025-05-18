@@ -35,7 +35,7 @@ const CustomCursor: React.FC = () => {
       if (
         target.tagName.toLowerCase() === 'a' ||
         target.tagName.toLowerCase() === 'button' ||
-        target.closest('a, button, [role="button"], .clickable-element') 
+        target.closest('a, button, [role="button"], .clickable-element')
       ) {
         setCursorVariant('link');
       } else if (
@@ -54,7 +54,7 @@ const CustomCursor: React.FC = () => {
         setCursorVariant('default');
       }
     };
-    
+
     const handleMouseOut = (e: MouseEvent) => {
       setCursorVariant('default');
     }
@@ -63,7 +63,7 @@ const CustomCursor: React.FC = () => {
     document.addEventListener('mouseout', handleMouseOut);
 
     const interactiveElements = document.querySelectorAll('a, button, [role="button"], input[type="submit"], input[type="button"], .clickable-element');
-    
+
     const onLinkHover = () => setCursorVariant('link');
     const onDefault = () => setCursorVariant('default');
 
@@ -82,64 +82,23 @@ const CustomCursor: React.FC = () => {
     };
   }, [isClient]);
 
-  const springConfig = { damping: 28, stiffness: 400, mass: 0.3 };
   const innerSpringConfig = { damping: 30, stiffness: 600, mass: 0.2 };
-
-  const smoothMouseOuter = {
-    x: useSpring(mousePosition.x, springConfig),
-    y: useSpring(mousePosition.y, springConfig),
-  };
 
   const smoothMouseInner = {
     x: useSpring(mousePosition.x, innerSpringConfig),
     y: useSpring(mousePosition.y, innerSpringConfig),
   };
-  
+
   useEffect(() => {
     if(isClient) {
-        smoothMouseOuter.x.set(mousePosition.x);
-        smoothMouseOuter.y.set(mousePosition.y);
         smoothMouseInner.x.set(mousePosition.x);
         smoothMouseInner.y.set(mousePosition.y);
     }
-  }, [mousePosition, smoothMouseOuter.x, smoothMouseOuter.y, smoothMouseInner.x, smoothMouseInner.y, isClient]);
+  }, [mousePosition, smoothMouseInner.x, smoothMouseInner.y, isClient]);
 
   if (!isClient) {
     return null; // Don't render on server
   }
-
-  const variantsOuter = {
-    default: {
-      width: 24,
-      height: 24,
-      borderWidth: '1px',
-      borderColor: 'hsla(var(--accent) / 0.3)', // Faint accent color for halo
-      backgroundColor: 'transparent',
-      opacity: 0.7,
-      x: '-50%', 
-      y: '-50%',
-    },
-    link: {
-      width: 36,
-      height: 36,
-      borderWidth: '1px',
-      borderColor: 'hsla(var(--accent) / 0.7)', // More visible halo
-      backgroundColor: 'hsla(var(--accent) / 0.1)',
-      opacity: 1,
-      x: '-50%',
-      y: '-50%',
-    },
-    text: { // I-beam for text input
-      width: 2, 
-      height: 20, 
-      borderRadius: '0px',
-      borderWidth: '0px',
-      backgroundColor: 'hsl(var(--foreground))', // Standard text cursor color
-      opacity: 1,
-      x: '-50%', 
-      y: '-50%',
-    },
-  };
 
   const variantsInner = { // The "laser" dot
     default: {
@@ -162,7 +121,7 @@ const CustomCursor: React.FC = () => {
       y: '-50%',
       boxShadow: '0 0 8px hsl(var(--accent)), 0 0 12px hsl(var(--accent))', // More intense glow
     },
-    text: { // Hide laser dot when I-beam is shown
+    text: { // Hide laser dot when I-beam is shown, allowing default browser I-beam
       width: 0,
       height: 0,
       opacity: 0,
@@ -171,17 +130,6 @@ const CustomCursor: React.FC = () => {
 
   return (
     <>
-      {/* Outer Halo/Feedback */}
-      <motion.div
-        className="pointer-events-none fixed left-0 top-0 z-[9999] rounded-full"
-        style={{
-          translateX: smoothMouseOuter.x,
-          translateY: smoothMouseOuter.y,
-        }}
-        variants={variantsOuter}
-        animate={cursorVariant}
-        transition={{ ...springConfig, x: { ...springConfig }, y: { ...springConfig } }}
-      />
       {/* Inner Laser Dot */}
       <motion.div
         className="pointer-events-none fixed left-0 top-0 z-[9999] rounded-full"
