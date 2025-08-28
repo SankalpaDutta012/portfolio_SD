@@ -13,7 +13,7 @@ const projects: Project[] = [
     imageUrl: "/RoamFree.jpg",
     imageHint: "travel collage", 
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB"],
-    liveDemoUrl: "https://roamfree-travel-app.onrender.com/",
+    liveDemoUrl: "https://roam-free.vercel.app/",
     githubUrl: "https://github.com/SankalpaDutta012/RoamFree-Travel-App.git",
   },
   {
@@ -22,7 +22,7 @@ const projects: Project[] = [
     imageUrl: "/ALGT.jpg",
     imageHint: "task app interface",
     techStack: ["React", "Node.js","TypeScript", "Next.js", "Tailwind CSS", "MongoDB"],
-    liveDemoUrl: "https://algo-tracker-website.onrender.com/",
+    liveDemoUrl: "https://https://algo-tracker-ten.vercel.app/",
     githubUrl: "https://github.com/SankalpaDutta012/Algo-Tracker-Website.git",
   },
   {
@@ -40,7 +40,7 @@ const projects: Project[] = [
     imageUrl: "/SnippetSphere.png",
     imageHint: "web app",
     techStack: ["JavaScript", "TypeScript", "MongoDb", "Node js", "Next js"],
-    liveDemoUrl: "https://snippet-sphere.onrender.com",
+    liveDemoUrl: "https://snippet-sphere-liart.vercel.app/",
     githubUrl: "https://github.com/SankalpaDutta012/Snippet-Sphere.git",
   },
 ];
