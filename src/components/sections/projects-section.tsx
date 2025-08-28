@@ -22,7 +22,7 @@ const projects: Project[] = [
     imageUrl: "/ALGT.jpg",
     imageHint: "task app interface",
     techStack: ["React", "Node.js","TypeScript", "Next.js", "Tailwind CSS", "MongoDB"],
-    liveDemoUrl: "https://https://algo-tracker-ten.vercel.app/",
+    liveDemoUrl: "https://algo-tracker-ten.vercel.app/",
     githubUrl: "https://github.com/SankalpaDutta012/Algo-Tracker-Website.git",
   },
   {
