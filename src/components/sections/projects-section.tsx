@@ -9,7 +9,7 @@ import { ArrowDownCircle } from "lucide-react";
 const projects: Project[] = [
   {
     title: "PDF Analyzer",
-    description: "PDF Insights is an intelligent document management system that revolutionizes how you interact with your personal PDF library. Instead of treating documents as isolated files, our application creates connections between related content across your entire collection.",
+    description: "PDF Analyzer is an intelligent document management system that revolutionizes how you interact with your personal PDF library. Instead of treating documents as isolated files, our application creates connections between related content across your entire collection.",
     imageUrl: "/pdfAnalyzer.png",
     imageHint: "pdf analysis", 
     techStack: ["JavaScript", "Python", "Tailwind CSS", "Node.js"],
