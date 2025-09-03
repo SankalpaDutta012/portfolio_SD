@@ -17,7 +17,7 @@ interface JourneyItem {
 const journeyData: JourneyItem[] = [
   {
     id: "ai-intern",
-    date: "Mar 2025 – Present",
+    date: "Feb 2025 – Aug 2025",
     title: "AI Intern – Health Chatbot Development",
     institution: "University of Calcutta",
     description: [
