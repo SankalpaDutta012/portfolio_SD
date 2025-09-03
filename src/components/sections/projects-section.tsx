@@ -8,6 +8,15 @@ import { ArrowDownCircle } from "lucide-react";
 
 const projects: Project[] = [
   {
+    title: "PDF Analyzer",
+    description: "PDF Insights is an intelligent document management system that revolutionizes how you interact with your personal PDF library. Instead of treating documents as isolated files, our application creates connections between related content across your entire collection.",
+    // imageUrl: "/RoamFree.jpg",
+    imageHint: "pdf analysis", 
+    techStack: ["JavaScript", "Python", "Tailwind CSS", "Node.js"],
+    liveDemoUrl: "https://pdf-analyze-rose.vercel.app",
+    githubUrl: "https://github.com/SankalpaDutta012/PDF_Insights.git",
+  },
+  {
     title: "RoamFree Travel App",
     description: "A comprehensive travel application to plan and book your adventures. Discover destinations, find accommodations, and manage your itineraries.",
     imageUrl: "/RoamFree.jpg",
