@@ -14,6 +14,11 @@ interface AchievementItem {
 }
 
 const achievementsData: AchievementItem[] = [
+{
+    id: "national-finalist",
+    text: "Finalist for ADOBE INDIA HACKATHON(National Finalist)",
+    icon: <Medal className="mr-3 h-6 w-6 flex-shrink-0 text-primary" />,
+  },
   {
     id: "rank-card",
     text: "Secured a rank card in 9th place in the 2nd Year of College (University of Engineering and Management, Kolkata)",
