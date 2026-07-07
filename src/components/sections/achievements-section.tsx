@@ -36,13 +36,13 @@ const achievementsData: AchievementItem[] = [
     text: "Successfully organized the hackathon 'Innofusion 1.0'",
     icon: <Zap className="mr-3 h-6 w-6 flex-shrink-0 text-primary" />,
   },
-  {
-    id: "hackerrank-5star",
-    text: "Earned a 5-star rating on HackerRank",
-    icon: <Award className="mr-3 h-6 w-6 flex-shrink-0 text-primary" />,
-    link: "https://www.hackerrank.com/profile/sankyyy0128", // Placeholder link
-    linkLabel: "View Profile",
-  },
+  // {
+  //   id: "hackerrank-5star",
+  //   text: "Earned a 5-star rating on HackerRank",
+  //   icon: <Award className="mr-3 h-6 w-6 flex-shrink-0 text-primary" />,
+  //   link: "https://www.hackerrank.com/profile/sankyyy0128", // Placeholder link
+  //   linkLabel: "View Profile",
+  // },
 ];
 
 const sectionVariants = {
