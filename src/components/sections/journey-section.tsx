@@ -37,7 +37,7 @@ const journeyData: JourneyItem[] = [
   },
   {
     id: "bachelor",
-    date: "Aug 2022 - Jul 2026 (Expected)",
+    date: "Aug 2022 - Jul 2026",
     title: "Bachelor of Technology - CSE (IoT, Cybersecurity, Blockchain)",
     institution: "University of Engineering and Management, Kolkata",
     description: "Pursuing B.Tech in CSE with a focus on full-stack development and AI. Active in coding competitions and tech communities.",
