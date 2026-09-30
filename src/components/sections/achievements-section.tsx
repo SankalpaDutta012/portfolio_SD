@@ -21,7 +21,7 @@ const achievementsData: AchievementItem[] = [
   },
   {
     id: "rank-card",
-    text: "Secured a rank card in 9th place in the 2nd Year of College (University of Engineering and Management, Kolkata)",
+    text: "Secured  rank cards in 9th place in the 2nd Year & 7th place in 4th Year of College (University of Engineering and Management, Kolkata)",
     icon: <Medal className="mr-3 h-6 w-6 flex-shrink-0 text-primary" />,
   },
   {
