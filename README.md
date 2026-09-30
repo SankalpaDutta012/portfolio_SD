@@ -23,7 +23,7 @@ Timeline view of my academic and professional milestones, including internships 
 Achievements
 Highlights like:
 
-🏅 9th place – University Rank
+🏅 9th(2nd Year) & 7th(4th Year) place – University Rank
 
 🏆 5th place – National Hackathon
 
